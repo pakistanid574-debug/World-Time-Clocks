@@ -3,20 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <!-- Google Site Verification -->
 <meta name="google-site-verification" content="mqs9JNllYYrmpEj7YBh1NQzu8LO6x6gPJGXv8rbt-EQ" />
+
 <!-- Primary SEO -->
-<title>World Clock - Live World Time Zones | Current Time in 30+ Cities</title>
-<meta name="description" content="Free live World Clock showing accurate current time in New York, London, Dubai, Riyadh, Karachi, Tokyo, Sydney and 30+ cities. Check time zones, set alarms and convert world times instantly.">
-<meta name="keywords" content="world clock, world time, live world clock, time zone converter, current time in different countries, international clock, global time zones, multi city clock, world time zones, time difference, current time worldwide, online world clock">
+<title>World Clock - Live Time Zones | Current Time in 30+ Cities Worldwide</title>
+<meta name="description" content="Free live World Clock showing accurate current time in New York, London, Dubai, Riyadh, Karachi, Tokyo, Sydney & 30+ cities. Set alarms, check time zones instantly. No signup needed.">
+<meta name="keywords" content="world clock, live world clock, world time zones, online world clock, free world clock, time zone converter, current time in different countries, current time in Karachi, current time in Dubai, multi city clock, global time zones">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://world-time-clocks.vercel.app/">
+
 <!-- Open Graph -->
-<meta property="og:title" content="World Clock - Live Time Zones Worldwide">
-<meta property="og:description" content="Check live time in 30+ cities around the world. Free, fast and accurate world clock with alarms.">
+<meta property="og:title" content="World Clock - Live Time Zones | Current Time in 30+ Cities">
+<meta property="og:description" content="Free live World Clock with accurate time in New York, London, Dubai, Riyadh, Karachi, Tokyo, Sydney and 30+ cities. Set alarms instantly.">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://world-time-clocks.vercel.app/">
 <meta property="og:locale" content="en_US">
-<meta name="robots" content="index, follow">
+<meta property="og:site_name" content="World Time Clocks">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="World Clock - Live Time Zones Worldwide">
+<meta name="twitter:description" content="Check live time in 30+ cities. Free, fast and accurate world clock with alarms.">
+
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Hassan Alvi">
 <meta name="theme-color" content="#168760">
+
+<!-- FAQ Schema (Rich Results) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a World Clock?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A World Clock shows the current local time of multiple cities across different time zones at the same time. It helps travelers, remote workers, and businesses stay synchronized globally."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this World Clock accurate?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. This tool uses the official time zone data of your browser and updates every second for maximum accuracy."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I set alarms for different cities?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Select any city from the dropdown, choose a time, and click Add Alarm. You will get an alert when the selected city reaches that time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this World Clock free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, this is a completely free online World Clock. No registration or payment is required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which cities are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We support 30+ cities including New York, London, Dubai, Riyadh, Karachi, Tokyo, Sydney, Mumbai, Los Angeles, Istanbul, Seoul, Shanghai, Jakarta, Bangkok, Dhaka, Manila, Doha and many more."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- WebApplication Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "World Clock - Live World Time Zones",
+  "url": "https://world-time-clocks.vercel.app/",
+  "description": "Free live World Clock showing accurate current time in 30+ cities worldwide with alarm feature.",
+  "applicationCategory": "UtilityApplication",
+  "operatingSystem": "Any",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Hassan Alvi"
+  }
+}
+</script>
+
 <style>
 :root{
 --bg:#168760;
@@ -110,15 +197,11 @@ justify-content:space-between;
 margin:15px 0;
 font-weight:600;
 }
-#splash{
-display:none;
-}
 #mainApp{
 display:block;
 max-width:900px;
 margin:0 auto;
 }
-/* SEO Content Styles */
 .seo-content{
 background:var(--card);
 border-radius:16px;
@@ -167,11 +250,23 @@ color:#fff;
 color:#fff;
 font-weight:600;
 }
+.city-list{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin-top:10px;
+}
+.city-list span{
+background:#e8f5e9;
+padding:4px 10px;
+border-radius:20px;
+font-size:0.85rem;
+}
 </style>
 </head>
 <body>
 <div id="mainApp">
-  <!-- Logo / Image with Alt Text -->
+  <!-- Logo -->
   <div style="margin-bottom:10px;">
     <svg width="70" height="70" viewBox="0 0 100 100" aria-label="World Clock Icon" role="img">
       <circle cx="50" cy="50" r="45" fill="#ffffff" stroke="#16a34a" stroke-width="6"/>
@@ -180,26 +275,34 @@ font-weight:600;
       <line x1="50" y1="50" x2="70" y2="50" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
     </svg>
   </div>
-  <h1>🌍 World Clock - Live World Time Zones</h1>
-  <!-- Internal Links (Navigation) -->
+
+  <h1>World Clock - Live World Time Zones</h1>
+  <p style="max-width:700px;margin:0 auto 15px;color:#fff;font-size:1.05rem;">
+    Free online World Clock showing live current time in 30+ cities including New York, London, Dubai, Riyadh, Karachi, Tokyo and Sydney.
+  </p>
+
+  <!-- Navigation -->
   <nav class="nav-links" aria-label="Page sections">
     <a href="#clocks-section">Live Clocks</a>
     <a href="#how-to-use">How to Use</a>
     <a href="#features">Features</a>
     <a href="#faq">FAQ</a>
   </nav>
+
   <div class="controls">
-    <select id="alarmCity"></select>
-    <input type="time" id="alarmTime">
+    <select id="alarmCity" aria-label="Select city for alarm"></select>
+    <input type="time" id="alarmTime" aria-label="Select alarm time">
     <button id="setAlarm">🔔 Add Alarm</button>
     <button id="openSettings">⚙️ Settings</button>
   </div>
   <div id="chargeStatus" class="statusBar"></div>
+
   <!-- Clocks Section -->
   <section id="clocks-section">
     <h2>Live World Time in 30+ Cities</h2>
     <div id="clocks"></div>
   </section>
+
   <!-- SEO Content -->
   <section class="seo-content" id="how-to-use">
     <h2>Free Online World Clock – Check Time Anywhere Instantly</h2>
@@ -214,6 +317,7 @@ font-weight:600;
       <li>Use Settings to enable Optimize mode or AI Charging status</li>
     </ul>
   </section>
+
   <section class="seo-content" id="features">
     <h2>Key Features of Our Live World Clock</h2>
     <ul>
@@ -224,20 +328,50 @@ font-weight:600;
       <li>Mobile-friendly and fast loading</li>
       <li>No registration required – completely free</li>
     </ul>
+    
     <h3>Popular Cities Supported</h3>
-    <p>
-      New York, London, Dubai, Riyadh, Karachi, Tokyo, Sydney, Mumbai, Los Angeles, Istanbul, Seoul, Shanghai, Jakarta, Bangkok, Dhaka, Manila, Doha, Tehran, Zurich and many more global cities.
-    </p>
+    <div class="city-list">
+      <span>New York</span>
+      <span>London</span>
+      <span>Dubai</span>
+      <span>Riyadh</span>
+      <span>Karachi</span>
+      <span>Tokyo</span>
+      <span>Sydney</span>
+      <span>Mumbai</span>
+      <span>Los Angeles</span>
+      <span>Istanbul</span>
+      <span>Seoul</span>
+      <span>Shanghai</span>
+      <span>Jakarta</span>
+      <span>Bangkok</span>
+      <span>Dhaka</span>
+      <span>Manila</span>
+      <span>Doha</span>
+      <span>Tehran</span>
+      <span>Zurich</span>
+    </div>
   </section>
+
   <section class="seo-content" id="faq">
     <h2>Frequently Asked Questions</h2>
+    
     <h3>What is a World Clock?</h3>
     <p>A World Clock shows the current local time of multiple cities across different time zones at the same time. It helps travelers, remote workers, and businesses stay synchronized globally.</p>
+    
     <h3>Is this World Clock accurate?</h3>
     <p>Yes. This tool uses the official time zone data of your browser and updates every second for maximum accuracy.</p>
+    
     <h3>Can I set alarms for different cities?</h3>
     <p>Yes. Select any city from the dropdown, choose a time, and click “Add Alarm”. You will get an alert when the selected city reaches that time.</p>
+    
+    <h3>Is this World Clock free to use?</h3>
+    <p>Yes, this is a completely free online World Clock. No registration or payment is required.</p>
+    
+    <h3>Which cities are supported?</h3>
+    <p>We support 30+ cities including New York, London, Dubai, Riyadh, Karachi, Tokyo, Sydney, Mumbai, Los Angeles, Istanbul, Seoul, Shanghai, Jakarta, Bangkok, Dhaka, Manila, Doha and many more.</p>
   </section>
+
   <!-- External Links -->
   <section class="seo-content">
     <h2>Useful Time Zone Resources</h2>
@@ -247,6 +381,7 @@ font-weight:600;
       <li><a href="https://www.worldtimeserver.com/" target="_blank" rel="noopener">World Time Server</a></li>
     </ul>
   </section>
+
   <footer class="footer">
     <p>© 2025 World Clock by <strong>Hassan Alvi</strong> | Free Online World Time Zones Tool</p>
     <p>
@@ -254,6 +389,7 @@ font-weight:600;
       <a href="#faq">FAQ</a>
     </p>
   </footer>
+
   <!-- Settings Panel -->
   <div id="settingsPanel" class="settingsPanel">
     <h3>Settings</h3>
@@ -268,6 +404,7 @@ font-weight:600;
     <button id="closeSettings">Close</button>
   </div>
 </div>
+
 <script>
 const zones=[
 {c:"New York 🇺🇸",z:"America/New_York"},
@@ -301,6 +438,7 @@ const zones=[
 {c:"Istanbul 🇹🇷",z:"Asia/Istanbul"},
 {c:"Copenhagen 🇩🇰",z:"Europe/Copenhagen"}
 ];
+
 const wrap = document.getElementById("clocks");
 const alarmCity = document.getElementById("alarmCity");
 const alarmTime = document.getElementById("alarmTime");
@@ -310,12 +448,14 @@ const closeSettings = document.getElementById("closeSettings");
 const optimizeToggle = document.getElementById("optimizeToggle");
 const aiToggle = document.getElementById("aiChargeToggle");
 const chargeStatus = document.getElementById("chargeStatus");
+
 let optimize = localStorage.getItem("optimize") === "true";
 optimizeToggle.checked = optimize;
 let aiCharge = localStorage.getItem("aiCharge") === "true";
 aiToggle.checked = aiCharge;
 let alarm = JSON.parse(localStorage.getItem("alarm") || "null");
 let lastTimes = {};
+
 zones.forEach(z => {
   alarmCity.innerHTML += `<option value="${z.z}">${z.c}</option>`;
   const d = document.createElement("div");
@@ -339,6 +479,7 @@ zones.forEach(z => {
     navigator.clipboard.writeText(t);
   };
 });
+
 document.getElementById("setAlarm").onclick = () => {
   if (!alarmTime.value) {
     alert("Select time");
@@ -352,16 +493,20 @@ document.getElementById("setAlarm").onclick = () => {
   localStorage.setItem("alarm", JSON.stringify(alarm));
   alert("Alarm set ✔");
 };
+
 openSettings.onclick = () => settingsPanel.style.display = "block";
 closeSettings.onclick = () => settingsPanel.style.display = "none";
+
 optimizeToggle.onchange = () => {
   optimize = optimizeToggle.checked;
   localStorage.setItem("optimize", optimize);
 };
+
 aiToggle.onchange = () => {
   aiCharge = aiToggle.checked;
   localStorage.setItem("aiCharge", aiCharge);
 };
+
 function updateClocks() {
   const now = new Date();
   document.querySelectorAll(".clock").forEach(c => {
@@ -375,6 +520,7 @@ function updateClocks() {
       lastTimes[c.z] = t;
     }
   });
+
   if (alarm && !alarm.fired) {
     const check = now.toLocaleTimeString("en-GB", {
       timeZone: alarm.zone,
@@ -387,6 +533,7 @@ function updateClocks() {
       alert("🔔 Alarm Time!");
     }
   }
+
   if (optimize) {
     setTimeout(updateClocks, 1000);
   } else {
@@ -394,6 +541,7 @@ function updateClocks() {
   }
 }
 updateClocks();
+
 /* AI Charging */
 if ('getBattery' in navigator) {
   navigator.getBattery().then(function(battery) {
