@@ -3,25 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <!-- Google Site Verification -->
 <meta name="google-site-verification" content="mqs9JNllYYrmpEj7YBh1NQzu8LO6x6gPJGXv8rbt-EQ" />
-
 <!-- Primary SEO -->
 <title>World Clock - Live World Time Zones | Current Time in 30+ Cities</title>
 <meta name="description" content="Free live World Clock showing accurate current time in New York, London, Dubai, Riyadh, Karachi, Tokyo, Sydney and 30+ cities. Check time zones, set alarms and convert world times instantly.">
 <meta name="keywords" content="world clock, world time, live world clock, time zone converter, current time in different countries, international clock, global time zones, multi city clock, world time zones, time difference, current time worldwide, online world clock">
-
 <!-- Open Graph -->
 <meta property="og:title" content="World Clock - Live Time Zones Worldwide">
 <meta property="og:description" content="Check live time in 30+ cities around the world. Free, fast and accurate world clock with alarms.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
-
 <meta name="robots" content="index, follow">
 <meta name="author" content="Hassan Alvi">
 <meta name="theme-color" content="#168760">
-
 <style>
 :root{
 --bg:#168760;
@@ -31,7 +26,6 @@
 --border:#0000001a;
 --accent:#16a34a;
 }
-
 body{
 margin:0;
 padding:10px;
@@ -40,7 +34,6 @@ color:var(--text);
 font-family:system-ui, -apple-system, sans-serif;
 text-align:center;
 }
-
 .controls{
 display:flex;
 flex-wrap:wrap;
@@ -48,7 +41,6 @@ gap:10px;
 justify-content:center;
 margin-bottom:20px;
 }
-
 button,input,select{
 padding:12px 16px;
 border-radius:999px;
@@ -58,14 +50,12 @@ color:var(--text);
 font-weight:600;
 font-size:1rem;
 }
-
 #clocks{
 display:flex;
 flex-direction:column;
 gap:15px;
 margin-top:10px;
 }
-
 .clock{
 padding:16px;
 border-radius:16px;
@@ -76,36 +66,30 @@ justify-content:space-between;
 align-items:center;
 flex-wrap:wrap;
 }
-
 .clock h3{
 flex-basis:100%;
 margin:0 0 5px 0;
 }
-
 .time{
 font-size:1.4rem;
 font-weight:700;
 color:var(--accent);
 }
-
 .date{
 font-size:0.85rem;
 color:var(--muted);
 }
-
 .copyBtn{
 padding:8px 12px;
 font-size:0.9rem;
 cursor:pointer;
 }
-
 .statusBar{
 margin-top:10px;
 font-size:0.9rem;
 color:var(--accent);
 font-weight:600;
 }
-
 .settingsPanel{
 position:fixed;
 top:50%;
@@ -119,7 +103,6 @@ display:none;
 z-index:100;
 width:230px;
 }
-
 .toggle{
 display:flex;
 align-items:center;
@@ -127,30 +110,14 @@ justify-content:space-between;
 margin:15px 0;
 font-weight:600;
 }
-
 #splash{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#16a34a;
-color:#fff;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-font-size:2rem;
-font-weight:700;
-z-index:9999;
-}
-
-#mainApp{
 display:none;
+}
+#mainApp{
+display:block;
 max-width:900px;
 margin:0 auto;
 }
-
 /* SEO Content Styles */
 .seo-content{
 background:var(--card);
@@ -160,25 +127,20 @@ margin:25px 0;
 text-align:left;
 line-height:1.6;
 }
-
 .seo-content h2{
 color:var(--accent);
 margin-top:0;
 }
-
 .seo-content h3{
 margin-top:18px;
 }
-
 .seo-content ul{
 padding-left:20px;
 }
-
 .seo-content a{
 color:#0b5;
 font-weight:600;
 }
-
 .nav-links{
 display:flex;
 flex-wrap:wrap;
@@ -186,7 +148,6 @@ gap:12px;
 justify-content:center;
 margin:15px 0 25px;
 }
-
 .nav-links a{
 background:var(--card);
 padding:8px 16px;
@@ -196,29 +157,20 @@ color:var(--text);
 font-weight:600;
 border:1px solid var(--border);
 }
-
 .footer{
 margin-top:30px;
 padding:20px;
 font-size:0.9rem;
 color:#fff;
 }
-
 .footer a{
 color:#fff;
 font-weight:600;
 }
 </style>
 </head>
-
 <body>
-
-<div id="splash">
-  <h1>App Developer Hassan Alvi</h1>
-</div>
-
 <div id="mainApp">
-
   <!-- Logo / Image with Alt Text -->
   <div style="margin-bottom:10px;">
     <svg width="70" height="70" viewBox="0 0 100 100" aria-label="World Clock Icon" role="img">
@@ -228,9 +180,7 @@ font-weight:600;
       <line x1="50" y1="50" x2="70" y2="50" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
     </svg>
   </div>
-
   <h1>🌍 World Clock - Live World Time Zones</h1>
-
   <!-- Internal Links (Navigation) -->
   <nav class="nav-links" aria-label="Page sections">
     <a href="#clocks-section">Live Clocks</a>
@@ -238,29 +188,24 @@ font-weight:600;
     <a href="#features">Features</a>
     <a href="#faq">FAQ</a>
   </nav>
-
   <div class="controls">
     <select id="alarmCity"></select>
     <input type="time" id="alarmTime">
     <button id="setAlarm">🔔 Add Alarm</button>
     <button id="openSettings">⚙️ Settings</button>
   </div>
-
   <div id="chargeStatus" class="statusBar"></div>
-
   <!-- Clocks Section -->
   <section id="clocks-section">
     <h2>Live World Time in 30+ Cities</h2>
     <div id="clocks"></div>
   </section>
-
   <!-- SEO Content -->
   <section class="seo-content" id="how-to-use">
     <h2>Free Online World Clock – Check Time Anywhere Instantly</h2>
     <p>
       Welcome to the best free <strong>World Clock</strong> tool. Instantly check the <strong>current time</strong> in major cities around the world including New York, London, Dubai, Riyadh, Karachi, Tokyo, Sydney, Mumbai and many more. Our live world clock shows accurate time zones with date and supports alarms.
     </p>
-
     <h3>How to Use This World Clock</h3>
     <ul>
       <li>Scroll down to see live time of 30+ cities</li>
@@ -269,7 +214,6 @@ font-weight:600;
       <li>Use Settings to enable Optimize mode or AI Charging status</li>
     </ul>
   </section>
-
   <section class="seo-content" id="features">
     <h2>Key Features of Our Live World Clock</h2>
     <ul>
@@ -280,26 +224,20 @@ font-weight:600;
       <li>Mobile-friendly and fast loading</li>
       <li>No registration required – completely free</li>
     </ul>
-
     <h3>Popular Cities Supported</h3>
     <p>
       New York, London, Dubai, Riyadh, Karachi, Tokyo, Sydney, Mumbai, Los Angeles, Istanbul, Seoul, Shanghai, Jakarta, Bangkok, Dhaka, Manila, Doha, Tehran, Zurich and many more global cities.
     </p>
   </section>
-
   <section class="seo-content" id="faq">
     <h2>Frequently Asked Questions</h2>
-
     <h3>What is a World Clock?</h3>
     <p>A World Clock shows the current local time of multiple cities across different time zones at the same time. It helps travelers, remote workers, and businesses stay synchronized globally.</p>
-
     <h3>Is this World Clock accurate?</h3>
     <p>Yes. This tool uses the official time zone data of your browser and updates every second for maximum accuracy.</p>
-
     <h3>Can I set alarms for different cities?</h3>
     <p>Yes. Select any city from the dropdown, choose a time, and click “Add Alarm”. You will get an alert when the selected city reaches that time.</p>
   </section>
-
   <!-- External Links -->
   <section class="seo-content">
     <h2>Useful Time Zone Resources</h2>
@@ -309,16 +247,14 @@ font-weight:600;
       <li><a href="https://www.worldtimeserver.com/" target="_blank" rel="noopener">World Time Server</a></li>
     </ul>
   </section>
-
   <footer class="footer">
     <p>© 2025 World Clock by <strong>Hassan Alvi</strong> | Free Online World Time Zones Tool</p>
     <p>
-      <a href="#clocks-section">Back to Clocks</a> • 
+      <a href="#clocks-section">Back to Clocks</a> •
       <a href="#faq">FAQ</a>
     </p>
   </footer>
-
-  <!-- Settings Panel (Yeh missing tha) -->
+  <!-- Settings Panel -->
   <div id="settingsPanel" class="settingsPanel">
     <h3>Settings</h3>
     <div class="toggle">
@@ -331,9 +267,7 @@ font-weight:600;
     </div>
     <button id="closeSettings">Close</button>
   </div>
-
 </div>
-
 <script>
 const zones=[
 {c:"New York 🇺🇸",z:"America/New_York"},
@@ -367,7 +301,6 @@ const zones=[
 {c:"Istanbul 🇹🇷",z:"Asia/Istanbul"},
 {c:"Copenhagen 🇩🇰",z:"Europe/Copenhagen"}
 ];
-
 const wrap = document.getElementById("clocks");
 const alarmCity = document.getElementById("alarmCity");
 const alarmTime = document.getElementById("alarmTime");
@@ -377,19 +310,14 @@ const closeSettings = document.getElementById("closeSettings");
 const optimizeToggle = document.getElementById("optimizeToggle");
 const aiToggle = document.getElementById("aiChargeToggle");
 const chargeStatus = document.getElementById("chargeStatus");
-
 let optimize = localStorage.getItem("optimize") === "true";
 optimizeToggle.checked = optimize;
-
 let aiCharge = localStorage.getItem("aiCharge") === "true";
 aiToggle.checked = aiCharge;
-
 let alarm = JSON.parse(localStorage.getItem("alarm") || "null");
 let lastTimes = {};
-
 zones.forEach(z => {
-  alarmCity.innerHTML += `<option value="\( {z.z}"> \){z.c}</option>`;
-
+  alarmCity.innerHTML += `<option value="${z.z}">${z.c}</option>`;
   const d = document.createElement("div");
   d.className = "clock";
   d.innerHTML = `
@@ -400,7 +328,6 @@ zones.forEach(z => {
   `;
   d.z = z.z;
   wrap.appendChild(d);
-
   d.querySelector(".copyBtn").onclick = () => {
     const now = new Date();
     const t = now.toLocaleTimeString("en-US", {
@@ -412,7 +339,6 @@ zones.forEach(z => {
     navigator.clipboard.writeText(t);
   };
 });
-
 document.getElementById("setAlarm").onclick = () => {
   if (!alarmTime.value) {
     alert("Select time");
@@ -426,26 +352,20 @@ document.getElementById("setAlarm").onclick = () => {
   localStorage.setItem("alarm", JSON.stringify(alarm));
   alert("Alarm set ✔");
 };
-
 openSettings.onclick = () => settingsPanel.style.display = "block";
 closeSettings.onclick = () => settingsPanel.style.display = "none";
-
 optimizeToggle.onchange = () => {
   optimize = optimizeToggle.checked;
   localStorage.setItem("optimize", optimize);
 };
-
 aiToggle.onchange = () => {
   aiCharge = aiToggle.checked;
   localStorage.setItem("aiCharge", aiCharge);
 };
-
 function updateClocks() {
   const now = new Date();
-
   document.querySelectorAll(".clock").forEach(c => {
     const t = now.toLocaleTimeString("en-US", { timeZone: c.z });
-
     if (lastTimes[c.z] !== t) {
       c.querySelector(".time").textContent = t;
       c.querySelector(".date").textContent = now.toLocaleDateString("en-US", {
@@ -455,30 +375,25 @@ function updateClocks() {
       lastTimes[c.z] = t;
     }
   });
-
   if (alarm && !alarm.fired) {
     const check = now.toLocaleTimeString("en-GB", {
       timeZone: alarm.zone,
       hour: "2-digit",
       minute: "2-digit"
     });
-
     if (check === alarm.time) {
       alarm.fired = true;
       localStorage.setItem("alarm", JSON.stringify(alarm));
       alert("🔔 Alarm Time!");
     }
   }
-
   if (optimize) {
     setTimeout(updateClocks, 1000);
   } else {
     requestAnimationFrame(updateClocks);
   }
 }
-
 updateClocks();
-
 /* AI Charging */
 if ('getBattery' in navigator) {
   navigator.getBattery().then(function(battery) {
@@ -497,402 +412,6 @@ if ('getBattery' in navigator) {
     updateBattery();
   });
 }
-
-/* Splash screen hide */
-setTimeout(() => {
-  document.getElementById("splash").style.display = "none";
-  document.getElementById("mainApp").style.display = "block";
-}, 1500);
 </script>
-
 </body>
-                                                                 </ht}
-
-.settingsPanel{
-position:fixed;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-background:white;
-padding:20px;
-border-radius:16px;
-border:1px solid #ccc;
-display:none;
-z-index:100;
-width:230px;
-}
-
-.toggle{
-display:flex;
-align-items:center;
-justify-content:space-between;
-margin:15px 0;
-font-weight:600;
-}
-
-#splash{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:#16a34a;
-color:#fff;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-font-size:2rem;
-font-weight:700;
-z-index:9999;
-}
-
-#mainApp{
-display:none;
-max-width:900px;
-margin:0 auto;
-}
-
-/* SEO Content Styles */
-.seo-content{
-background:var(--card);
-border-radius:16px;
-padding:20px;
-margin:25px 0;
-text-align:left;
-line-height:1.6;
-}
-
-.seo-content h2{
-color:var(--accent);
-margin-top:0;
-}
-
-.seo-content h3{
-margin-top:18px;
-}
-
-.seo-content ul{
-padding-left:20px;
-}
-
-.seo-content a{
-color:#0b5;
-font-weight:600;
-}
-
-.nav-links{
-display:flex;
-flex-wrap:wrap;
-gap:12px;
-justify-content:center;
-margin:15px 0 25px;
-}
-
-.nav-links a{
-background:var(--card);
-padding:8px 16px;
-border-radius:999px;
-text-decoration:none;
-color:var(--text);
-font-weight:600;
-border:1px solid var(--border);
-}
-
-.footer{
-margin-top:30px;
-padding:20px;
-font-size:0.9rem;
-color:#fff;
-}
-
-.footer a{
-color:#fff;
-font-weight:600;
-}
-</style>
-</head>
-
-<body>
-
-<div id="splash">
-  <h1>App Developer Hassan Alvi</h1>
-</div>
-
-<div id="mainApp">
-
-  <!-- Logo / Image with Alt Text -->
-  <div style="margin-bottom:10px;">
-    <svg width="70" height="70" viewBox="0 0 100 100" aria-label="World Clock Icon" role="img">
-      <circle cx="50" cy="50" r="45" fill="#ffffff" stroke="#16a34a" stroke-width="6"/>
-      <circle cx="50" cy="50" r="5" fill="#16a34a"/>
-      <line x1="50" y1="50" x2="50" y2="25" stroke="#16a34a" stroke-width="5" stroke-linecap="round"/>
-      <line x1="50" y1="50" x2="70" y2="50" stroke="#16a34a" stroke-width="4" stroke-linecap="round"/>
-    </svg>
-  </div>
-
-  <h1>🌍 World Clock - Live World Time Zones</h1>
-
-  <!-- Internal Links (Navigation) -->
-  <nav class="nav-links" aria-label="Page sections">
-    <a href="#clocks-section">Live Clocks</a>
-    <a href="#how-to-use">How to Use</a>
-    <a href="#features">Features</a>
-    <a href="#faq">FAQ</a>
-  </nav>
-
-  <div class="controls">
-    <select id="alarmCity"></select>
-    <input type="time" id="alarmTime">
-    <button id="setAlarm">🔔 Add Alarm</button>
-    <button id="openSettings">⚙️ Settings</button>
-  </div>
-
-  <div id="chargeStatus" class="statusBar"></div>
-
-  <!-- Clocks Section -->
-  <section id="clocks-section">
-    <h2>Live World Time in 30+ Cities</h2>
-    <div id="clocks"></div>
-  </section>
-
-  <!-- SEO Content -->
-  <section class="seo-content" id="how-to-use">
-    <h2>Free Online World Clock – Check Time Anywhere Instantly</h2>
-    <p>
-      Welcome to the best free <strong>World Clock</strong> tool. Instantly check the <strong>current time</strong> in major cities around the world including New York, London, Dubai, Riyadh, Karachi, Tokyo, Sydney, Mumbai and many more. Our live world clock shows accurate time zones with date and supports alarms.
-    </p>
-
-    <h3>How to Use This World Clock</h3>
-    <ul>
-      <li>Scroll down to see live time of 30+ cities</li>
-      <li>Select any city and set an alarm using the time picker</li>
-      <li>Click the Copy button to copy the current time of any city</li>
-      <li>Use Settings to enable Optimize mode or AI Charging status</li>
-    </ul>
-  </section>
-
-  <section class="seo-content" id="features">
-    <h2>Key Features of Our Live World Clock</h2>
-    <ul>
-      <li>Accurate live time for 30+ international cities</li>
-      <li>Real-time time zone conversion</li>
-      <li>Alarm feature for any selected city</li>
-      <li>One-click copy time functionality</li>
-      <li>Mobile-friendly and fast loading</li>
-      <li>No registration required – completely free</li>
-    </ul>
-
-    <h3>Popular Cities Supported</h3>
-    <p>
-      New York, London, Dubai, Riyadh, Karachi, Tokyo, Sydney, Mumbai, Los Angeles, Istanbul, Seoul, Shanghai, Jakarta, Bangkok, Dhaka, Manila, Doha, Tehran, Zurich and many more global cities.
-    </p>
-  </section>
-
-  <section class="seo-content" id="faq">
-    <h2>Frequently Asked Questions</h2>
-
-    <h3>What is a World Clock?</h3>
-    <p>A World Clock shows the current local time of multiple cities across different time zones at the same time. It helps travelers, remote workers, and businesses stay synchronized globally.</p>
-
-    <h3>Is this World Clock accurate?</h3>
-    <p>Yes. This tool uses the official time zone data of your browser and updates every second for maximum accuracy.</p>
-
-    <h3>Can I set alarms for different cities?</h3>
-    <p>Yes. Select any city from the dropdown, choose a time, and click “Add Alarm”. You will get an alert when the selected city reaches that time.</p>
-  </section>
-
-  <!-- External Links -->
-  <section class="seo-content">
-    <h2>Useful Time Zone Resources</h2>
-    <ul>
-      <li><a href="https://www.timeanddate.com/worldclock/" target="_blank" rel="noopener">Time and Date World Clock</a></li>
-      <li><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="noopener">List of Time Zones (Wikipedia)</a></li>
-      <li><a href="https://www.worldtimeserver.com/" target="_blank" rel="noopener">World Time Server</a></li>
-    </ul>
-  </section>
-
-  <footer class="footer">
-    <p>© 2025 World Clock by <strong>Hassan Alvi</strong> | Free Online World Time Zones Tool</p>
-    <p>
-      <a href="#clocks-section">Back to Clocks</a> • 
-      <a href="#faq">FAQ</a>
-    </p>
-  </footer>
-
-</div>
-
-<script>
-const zones=[
-{c:"New York 🇺🇸",z:"America/New_York"},
-{c:"London 🇬🇧",z:"Europe/London"},
-{c:"Riyadh 🇸🇦",z:"Asia/Riyadh"},
-{c:"Dubai 🇦🇪",z:"Asia/Dubai"},
-{c:"Karachi 🇵🇰",z:"Asia/Karachi"},
-{c:"Manama 🇧🇭",z:"Asia/Bahrain"},
-{c:"Tehran 🇮🇷",z:"Asia/Tehran"},
-{c:"Zurich 🇨🇭",z:"Europe/Zurich"},
-{c:"Seoul 🇰🇷",z:"Asia/Seoul"},
-{c:"Jakarta 🇮🇩",z:"Asia/Jakarta"},
-{c:"Tokyo 🇯🇵",z:"Asia/Tokyo"},
-{c:"Bangkok 🇹🇭",z:"Asia/Bangkok"},
-{c:"Shanghai 🇨🇳",z:"Asia/Shanghai"},
-{c:"Kenya 🇰🇪",z:"Africa/Nairobi"},
-{c:"Mumbai 🇮🇳",z:"Asia/Kolkata"},
-{c:"Bishkek 🇰🇬",z:"Asia/Bishkek"},
-{c:"Bogota 🇨🇴",z:"America/Bogota"},
-{c:"Los Angeles 🇺🇸",z:"America/Los_Angeles"},
-{c:"Dhaka 🇧🇩",z:"Asia/Dhaka"},
-{c:"Manila 🇵🇭",z:"Asia/Manila"},
-{c:"Baku 🇦🇿",z:"Asia/Baku"},
-{c:"Doha 🇶🇦",z:"Asia/Qatar"},
-{c:"Kabul 🇦🇫",z:"Asia/Kabul"},
-{c:"Algiers 🇩🇿",z:"Africa/Algiers"},
-{c:"Buenos Aires 🇦🇷",z:"America/Buenos_Aires"},
-{c:"Dublin 🇮🇪",z:"Europe/Dublin"},
-{c:"Sydney 🇦🇺",z:"Australia/Sydney"},
-{c:"British Indian Ocean Territory 🇮🇴",z:"Indian/Chagos"},
-{c:"Istanbul 🇹🇷",z:"Asia/Istanbul"},
-{c:"Copenhagen 🇩🇰",z:"Europe/Copenhagen"}
-];
-
-const wrap = document.getElementById("clocks");
-const alarmCity = document.getElementById("alarmCity");
-const alarmTime = document.getElementById("alarmTime");
-const settingsPanel = document.getElementById("settingsPanel");
-const openSettings = document.getElementById("openSettings");
-const closeSettings = document.getElementById("closeSettings");
-const optimizeToggle = document.getElementById("optimizeToggle");
-const aiToggle = document.getElementById("aiChargeToggle");
-const chargeStatus = document.getElementById("chargeStatus");
-
-let optimize = localStorage.getItem("optimize") === "true";
-optimizeToggle.checked = optimize;
-
-let aiCharge = localStorage.getItem("aiCharge") === "true";
-aiToggle.checked = aiCharge;
-
-let alarm = JSON.parse(localStorage.getItem("alarm") || "null");
-let lastTimes = {};
-
-zones.forEach(z => {
-  // Fixed option creation
-  alarmCity.innerHTML += `<option value="\( {z.z}"> \){z.c}</option>`;
-
-  const d = document.createElement("div");
-  d.className = "clock";
-  d.innerHTML = `
-    <h3>${z.c}</h3>
-    <div class="date"></div>
-    <div class="time"></div>
-    <button class="copyBtn">📋 Copy</button>
-  `;
-  d.z = z.z;
-  wrap.appendChild(d);
-
-  d.querySelector(".copyBtn").onclick = () => {
-    const now = new Date();
-    const t = now.toLocaleTimeString("en-US", {
-      timeZone: z.z,
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit"
-    });
-    navigator.clipboard.writeText(t);
-  };
-});
-
-document.getElementById("setAlarm").onclick = () => {
-  if (!alarmTime.value) {
-    alert("Select time");
-    return;
-  }
-  alarm = {
-    zone: alarmCity.value,
-    time: alarmTime.value,
-    fired: false
-  };
-  localStorage.setItem("alarm", JSON.stringify(alarm));
-  alert("Alarm set ✔");
-};
-
-openSettings.onclick = () => settingsPanel.style.display = "block";
-closeSettings.onclick = () => settingsPanel.style.display = "none";
-
-optimizeToggle.onchange = () => {
-  optimize = optimizeToggle.checked;
-  localStorage.setItem("optimize", optimize);
-};
-
-aiToggle.onchange = () => {
-  aiCharge = aiToggle.checked;
-  localStorage.setItem("aiCharge", aiCharge);
-};
-
-function updateClocks() {
-  const now = new Date();
-
-  document.querySelectorAll(".clock").forEach(c => {
-    const t = now.toLocaleTimeString("en-US", { timeZone: c.z });
-
-    if (lastTimes[c.z] !== t) {
-      c.querySelector(".time").textContent = t;
-      c.querySelector(".date").textContent = now.toLocaleDateString("en-US", {
-        timeZone: c.z,
-        weekday: "long"
-      });
-      lastTimes[c.z] = t;
-    }
-  });
-
-  if (alarm && !alarm.fired) {
-    const check = now.toLocaleTimeString("en-GB", {
-      timeZone: alarm.zone,
-      hour: "2-digit",
-      minute: "2-digit"
-    });
-
-    if (check === alarm.time) {
-      alarm.fired = true;
-      localStorage.setItem("alarm", JSON.stringify(alarm));
-      alert("🔔 Alarm Time!");
-    }
-  }
-
-  if (optimize) {
-    setTimeout(updateClocks, 1000);
-  } else {
-    requestAnimationFrame(updateClocks);
-  }
-}
-
-updateClocks();
-
-/* AI Charging */
-if ('getBattery' in navigator) {
-  navigator.getBattery().then(function(battery) {
-    function updateBattery() {
-      if (!aiCharge) {
-        chargeStatus.textContent = "";
-        return;
-      }
-      if (battery.charging) {
-        chargeStatus.textContent = "⚡ AI Charging Active - Optimized Charging";
-      } else {
-        chargeStatus.textContent = "🔋 Running on Battery";
-      }
-    }
-    battery.addEventListener("chargingchange", updateBattery);
-    updateBattery();
-  });
-}
-
-/* Splash screen hide */
-setTimeout(() => {
-  document.getElementById("splash").style.display = "none";
-  document.getElementById("mainApp").style.display = "block";
-}, 1500);
-</script>
-
-</body>
-  </html>
+</html>
