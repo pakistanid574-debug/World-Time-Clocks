@@ -623,23 +623,39 @@ optimizeToggle.onchange = () => {
 
 function updateClocks() {
   const now = new Date();
+
   document.querySelectorAll(".clock").forEach(c => {
-    const t = now.toLocaleTimeString("en-US", { timeZone: c.z });
-    if (lastTimes[c.z] !== t) {
-      c.querySelector(".time").textContent = t;
-      c.querySelector(".date").textContent = now.toLocaleDateString("en-US", {
-        timeZone: c.z,
-        weekday: "long"
-      });
-      lastTimes[c.z] = t;
+    // Better & more accurate way
+    const timeStr = now.toLocaleTimeString("en-US", {
+      timeZone: c.z,
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: true
+    });
+
+    const dateStr = now.toLocaleDateString("en-US", {
+      timeZone: c.z,
+      weekday: "long",
+      year: "numeric",
+      month: "short",
+      day: "numeric"
+    });
+
+    if (lastTimes[c.z] !== timeStr) {
+      c.querySelector(".time").textContent = timeStr;
+      c.querySelector(".date").textContent = dateStr;
+      lastTimes[c.z] = timeStr;
     }
   });
 
+  // Alarm check
   if (alarm && !alarm.fired) {
     const check = now.toLocaleTimeString("en-GB", {
       timeZone: alarm.zone,
       hour: "2-digit",
-      minute: "2-digit"
+      minute: "2-digit",
+      hour12: false
     });
     if (check === alarm.time) {
       alarm.fired = true;
@@ -648,8 +664,9 @@ function updateClocks() {
     }
   }
 
-  if (optimize) {
-    setTimeout(updateClocks, 1000);
+  // Update every second (more stable)
+  setTimeout(updateClocks, 1000);
+}
   } else {
     requestAnimationFrame(updateClocks);
   }
