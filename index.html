@@ -572,7 +572,6 @@ const optimizeToggle = document.getElementById("optimizeToggle");
 let optimize = localStorage.getItem("optimize") === "true";
 optimizeToggle.checked = optimize;
 let alarm = JSON.parse(localStorage.getItem("alarm") || "null");
-let lastTimes = {};
 
 zones.forEach(z => {
   alarmCity.innerHTML += `<option value="${z.z}">${z.c}</option>`;
@@ -586,6 +585,7 @@ zones.forEach(z => {
   `;
   d.z = z.z;
   wrap.appendChild(d);
+
   d.querySelector(".copyBtn").onclick = () => {
     const now = new Date();
     const t = now.toLocaleTimeString("en-US", {
@@ -625,26 +625,33 @@ function updateClocks() {
   const now = new Date();
 
   document.querySelectorAll(".clock").forEach(c => {
-    const timeStr = now.toLocaleTimeString("en-US", {
-      timeZone: c.z,
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-      hour12: true
-    });
+    try {
+      const timeStr = now.toLocaleTimeString("en-US", {
+        timeZone: c.z,
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true
+      });
 
-    const dateStr = now.toLocaleDateString("en-US", {
-      timeZone: c.z,
-      weekday: "long",
-      year: "numeric",
-      month: "short",
-      day: "numeric"
-    });
+      const dateStr = now.toLocaleDateString("en-US", {
+        timeZone: c.z,
+        weekday: "long",
+        day: "numeric",
+        month: "short"
+      });
 
-    if (lastTimes[c.z] !== timeStr) {
-      c.querySelector(".time").textContent = timeStr;
-      c.querySelector(".date").textContent = dateStr;
-      lastTimes[c.z] = timeStr;
+      const timeEl = c.querySelector(".time");
+      const dateEl = c.querySelector(".date");
+
+      if (timeEl.textContent !== timeStr) {
+        timeEl.textContent = timeStr;
+      }
+      if (dateEl.textContent !== dateStr) {
+        dateEl.textContent = dateStr;
+      }
+    } catch (e) {
+      console.error("Timezone error:", c.z);
     }
   });
 
@@ -663,7 +670,6 @@ function updateClocks() {
     }
   }
 
-  // Always update every second (more accurate & stable)
   setTimeout(updateClocks, 1000);
 }
 
