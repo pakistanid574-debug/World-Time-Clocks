@@ -18,39 +18,34 @@
   ============================================
 -->
 
-<!-- Google Site Verification -->
 <meta name="google-site-verification" content="mqs9JNllYYrmpEj7YBh1NQzu8LO6x6gPJGXv8rbt-EQ" />
 
-<!-- Primary SEO -->
 <title>Free World Clock Online ⚡ Live Time in 30+ Cities | Karachi, Dubai, NY</title>
 <meta name="description" content="Check live current time anywhere in the world. Free World Clock with real-time updates for Karachi, Dubai, Riyadh, London, New York, Tokyo, Sydney + Alarm feature. Instant & accurate.">
-<meta name="keywords" content="world clock, live world clock, world time zones, online world clock, free world clock, time zone converter, current time in different countries, current time in Karachi, current time in Dubai, multi city clock">
+<meta name="keywords" content="world clock, live world clock, world time zones, online world clock, free world clock, time zone converter, current time in different countries, current time in Karachi, current time in Dubai">
 
 <link rel="canonical" href="https://world-time-clocks.vercel.app/">
 
 <meta property="og:title" content="Free World Clock Online ⚡ Live Time in 30+ Cities">
-<meta property="og:description" content="Check live current time anywhere in the world. Free World Clock with real-time updates for Karachi, Dubai, Riyadh, London, New York, Tokyo, Sydney + Alarm feature.">
+<meta property="og:description" content="Check live current time anywhere in the world. Free World Clock with real-time updates + Alarm feature.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://world-time-clocks.vercel.app/">
-<meta property="og:locale" content="en_US">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Free World Clock Online ⚡ Live Time in 30+ Cities">
-<meta name="twitter:description" content="Check live current time anywhere in the world. Free World Clock with real-time updates + Alarm feature.">
-
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#db2777">
 <meta name="author" content="Hassan Alvi">
-<meta name="theme-color" content="#0f172a">
 
 <style>
 :root {
-  --bg: #f8fafc;
-  --text: #0f172a;
-  --muted: #64748b;
+  --bg: #fdf2f8;
+  --text: #831843;
+  --muted: #9d174d;
   --card: #ffffff;
-  --border: #e2e8f0;
-  --accent: #0f766e;
-  --header-bg: #0f172a;
+  --border: #fbcfe8;
+  --accent: #db2777;
+  --accent-dark: #be185d;
+  --header-bg: linear-gradient(135deg, #db2777, #9d174d);
+  --pink-light: #fce7f3;
+  --pink-glow: rgba(219, 39, 119, 0.15);
 }
 
 * {
@@ -79,20 +74,20 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 20px rgba(219, 39, 119, 0.3);
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 700;
 }
 
 .logo svg {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
 }
 
 .header-right {
@@ -112,32 +107,26 @@ body {
   font-weight: 600;
   font-size: 0.9rem;
   transition: all 0.2s;
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
 .youtube-btn {
   background: #ff0000;
   color: white;
 }
-.youtube-btn:hover {
-  background: #cc0000;
-}
+.youtube-btn:hover { background: #cc0000; }
 
 .github-btn {
   background: #24292f;
   color: white;
-  border: 1px solid #444;
 }
-.github-btn:hover {
-  background: #1a1f24;
-}
+.github-btn:hover { background: #1a1f24; }
 
 .instagram-btn {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
   color: white;
 }
-.instagram-btn:hover {
-  opacity: 0.9;
-}
+.instagram-btn:hover { opacity: 0.9; }
 
 .social-btn svg {
   width: 17px;
@@ -148,19 +137,23 @@ body {
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px 16px;
+  padding: 24px 16px;
 }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   margin: 10px 0 8px;
   text-align: center;
+  color: var(--accent-dark);
+  background: linear-gradient(90deg, #db2777, #9d174d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
   text-align: center;
   color: var(--muted);
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   font-size: 1.05rem;
 }
 
@@ -169,11 +162,11 @@ h1 {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 button, input, select {
-  padding: 11px 16px;
+  padding: 12px 18px;
   border-radius: 999px;
   border: 1px solid var(--border);
   background: var(--card);
@@ -181,21 +174,32 @@ button, input, select {
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
+  transition: all 0.2s;
 }
 
 button:hover {
-  background: #f1f5f9;
+  background: var(--pink-light);
+  border-color: var(--accent);
+}
+
+#setAlarm {
+  background: var(--accent);
+  color: white;
+  border: none;
+}
+#setAlarm:hover {
+  background: var(--accent-dark);
 }
 
 #clocks {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
 }
 
 .clock {
-  padding: 16px 18px;
-  border-radius: 14px;
+  padding: 18px 20px;
+  border-radius: 18px;
   background: var(--card);
   border: 1px solid var(--border);
   display: flex;
@@ -203,29 +207,43 @@ button:hover {
   align-items: center;
   flex-wrap: wrap;
   gap: 8px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 15px var(--pink-glow);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.clock:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(219, 39, 119, 0.2);
 }
 
 .clock h3 {
   flex-basis: 100%;
-  margin: 0 0 4px 0;
-  font-size: 1.1rem;
+  margin: 0 0 6px 0;
+  font-size: 1.15rem;
+  color: var(--accent-dark);
 }
 
 .time {
-  font-size: 1.45rem;
+  font-size: 1.55rem;
   font-weight: 700;
   color: var(--accent);
 }
 
 .date {
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   color: var(--muted);
 }
 
 .copyBtn {
-  padding: 7px 14px;
+  padding: 8px 16px;
   font-size: 0.88rem;
+  background: var(--pink-light);
+  border: 1px solid var(--border);
+  color: var(--accent-dark);
+}
+.copyBtn:hover {
+  background: var(--accent);
+  color: white;
 }
 
 .settingsPanel {
@@ -235,12 +253,12 @@ button:hover {
   transform: translate(-50%, -50%);
   background: white;
   padding: 24px;
-  border-radius: 16px;
+  border-radius: 20px;
   border: 1px solid var(--border);
   display: none;
   z-index: 200;
-  width: 260px;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+  width: 270px;
+  box-shadow: 0 15px 40px rgba(219, 39, 119, 0.25);
 }
 
 .toggle {
@@ -249,30 +267,28 @@ button:hover {
   justify-content: space-between;
   margin: 16px 0;
   font-weight: 600;
+  color: var(--accent-dark);
 }
 
 .seo-content {
   background: var(--card);
-  border-radius: 14px;
-  padding: 22px;
-  margin: 28px 0;
+  border-radius: 18px;
+  padding: 24px;
+  margin: 30px 0;
   text-align: left;
   border: 1px solid var(--border);
+  box-shadow: 0 4px 15px var(--pink-glow);
 }
 
 .seo-content h2 {
   color: var(--accent);
   margin-top: 0;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
 }
 
 .seo-content h3 {
   margin-top: 18px;
-  font-size: 1.05rem;
-}
-
-.seo-content ul {
-  padding-left: 20px;
+  color: var(--accent-dark);
 }
 
 .seo-content a {
@@ -285,43 +301,46 @@ button:hover {
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  margin: 18px 0 28px;
+  margin: 20px 0 30px;
 }
 
 .nav-links a {
   background: var(--card);
-  padding: 8px 16px;
+  padding: 9px 18px;
   border-radius: 999px;
   text-decoration: none;
-  color: var(--text);
+  color: var(--accent-dark);
   font-weight: 600;
   border: 1px solid var(--border);
   font-size: 0.9rem;
+  transition: all 0.2s;
 }
-
 .nav-links a:hover {
-  background: #f1f5f9;
+  background: var(--accent);
+  color: white;
+  border-color: var(--accent);
 }
 
 .city-list {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 12px;
+  margin-top: 14px;
 }
 
 .city-list span {
-  background: #f0fdfa;
-  color: #0f766e;
-  padding: 5px 12px;
+  background: var(--pink-light);
+  color: var(--accent-dark);
+  padding: 6px 14px;
   border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 500;
+  border: 1px solid var(--border);
 }
 
 .footer {
-  margin-top: 40px;
-  padding: 24px 16px;
+  margin-top: 50px;
+  padding: 28px 16px;
   text-align: center;
   color: var(--muted);
   font-size: 0.9rem;
@@ -343,7 +362,7 @@ button:hover {
     justify-content: center;
   }
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.55rem;
   }
 }
 </style>
@@ -363,27 +382,18 @@ button:hover {
   </div>
 
   <div class="header-right">
-    <!-- YouTube -->
     <a href="https://youtube.com/@leaksoff8" target="_blank" rel="noopener" class="social-btn youtube-btn">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-      </svg>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
       YouTube
     </a>
 
-    <!-- GitHub -->
     <a href="https://github.com/pakistanid574-debug" target="_blank" rel="noopener" class="social-btn github-btn">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
-      </svg>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
       GitHub
     </a>
 
-    <!-- Instagram -->
     <a href="https://www.instagram.com/leaksff8/" target="_blank" rel="noopener" class="social-btn instagram-btn">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-      </svg>
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
       Instagram
     </a>
   </div>
@@ -395,8 +405,7 @@ button:hover {
     Free online World Clock showing live current time in 30+ cities including New York, London, Dubai, Riyadh, Karachi, Tokyo and Sydney.
   </p>
 
-  <!-- Navigation -->
-  <nav class="nav-links" aria-label="Page sections">
+  <nav class="nav-links">
     <a href="#clocks-section">Live Clocks</a>
     <a href="#how-to-use">How to Use</a>
     <a href="#features">Features</a>
@@ -404,24 +413,20 @@ button:hover {
   </nav>
 
   <div class="controls">
-    <select id="alarmCity" aria-label="Select city for alarm"></select>
-    <input type="time" id="alarmTime" aria-label="Select alarm time">
+    <select id="alarmCity"></select>
+    <input type="time" id="alarmTime">
     <button id="setAlarm">🔔 Add Alarm</button>
     <button id="openSettings">⚙️ Settings</button>
   </div>
 
-  <!-- Clocks Section -->
   <section id="clocks-section">
-    <h2 style="text-align:center; margin-bottom:16px;">Live World Time in 30+ Cities</h2>
+    <h2 style="text-align:center; margin-bottom:18px; color:#be185d;">Live World Time in 30+ Cities</h2>
     <div id="clocks"></div>
   </section>
 
-  <!-- SEO Content -->
   <section class="seo-content" id="how-to-use">
     <h2>Free Online World Clock – Check Time Anywhere Instantly</h2>
-    <p>
-      Welcome to the best free <strong>World Clock</strong> tool. Instantly check the <strong>current time</strong> in major cities around the world including New York, London, Dubai, Riyadh, Karachi, Tokyo, Sydney, Mumbai and many more. Our live world clock shows accurate time zones with date and supports alarms.
-    </p>
+    <p>Welcome to the best free <strong>World Clock</strong> tool. Instantly check the <strong>current time</strong> in major cities around the world including New York, London, Dubai, Riyadh, Karachi, Tokyo, Sydney, Mumbai and many more.</p>
     <h3>How to Use This World Clock</h3>
     <ul>
       <li>Scroll down to see live time of 30+ cities</li>
@@ -441,57 +446,25 @@ button:hover {
       <li>Mobile-friendly and fast loading</li>
       <li>No registration required – completely free</li>
     </ul>
-    
     <h3>Popular Cities Supported</h3>
     <div class="city-list">
-      <span>New York</span>
-      <span>London</span>
-      <span>Dubai</span>
-      <span>Riyadh</span>
-      <span>Karachi</span>
-      <span>Tokyo</span>
-      <span>Sydney</span>
-      <span>Mumbai</span>
-      <span>Los Angeles</span>
-      <span>Istanbul</span>
-      <span>Seoul</span>
-      <span>Shanghai</span>
-      <span>Jakarta</span>
-      <span>Bangkok</span>
-      <span>Dhaka</span>
-      <span>Manila</span>
-      <span>Doha</span>
-      <span>Tehran</span>
-      <span>Zurich</span>
+      <span>New York</span><span>London</span><span>Dubai</span><span>Riyadh</span><span>Karachi</span>
+      <span>Tokyo</span><span>Sydney</span><span>Mumbai</span><span>Los Angeles</span><span>Istanbul</span>
+      <span>Seoul</span><span>Shanghai</span><span>Jakarta</span><span>Bangkok</span><span>Dhaka</span>
+      <span>Manila</span><span>Doha</span><span>Tehran</span><span>Zurich</span>
     </div>
   </section>
 
   <section class="seo-content" id="faq">
     <h2>Frequently Asked Questions</h2>
-    
     <h3>What is a World Clock?</h3>
-    <p>A World Clock shows the current local time of multiple cities across different time zones at the same time. It helps travelers, remote workers, and businesses stay synchronized globally.</p>
-    
+    <p>A World Clock shows the current local time of multiple cities across different time zones at the same time.</p>
     <h3>Is this World Clock accurate?</h3>
-    <p>Yes. This tool uses the official time zone data of your browser and updates every second for maximum accuracy.</p>
-    
+    <p>Yes. This tool uses the official time zone data of your browser and updates every second.</p>
     <h3>Can I set alarms for different cities?</h3>
-    <p>Yes. Select any city from the dropdown, choose a time, and click “Add Alarm”. You will get an alert when the selected city reaches that time.</p>
-    
-    <h3>Is this World Clock free to use?</h3>
-    <p>Yes, this is a completely free online World Clock. No registration or payment is required.</p>
-    
-    <h3>Which cities are supported?</h3>
-    <p>We support 30+ cities including New York, London, Dubai, Riyadh, Karachi, Tokyo, Sydney, Mumbai, Los Angeles, Istanbul, Seoul, Shanghai, Jakarta, Bangkok, Dhaka, Manila, Doha and many more.</p>
-  </section>
-
-  <section class="seo-content">
-    <h2>Useful Time Zone Resources</h2>
-    <ul>
-      <li><a href="https://www.timeanddate.com/worldclock/" target="_blank" rel="noopener">Time and Date World Clock</a></li>
-      <li><a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" target="_blank" rel="noopener">List of Time Zones (Wikipedia)</a></li>
-      <li><a href="https://www.worldtimeserver.com/" target="_blank" rel="noopener">World Time Server</a></li>
-    </ul>
+    <p>Yes. Select any city, choose a time, and click “Add Alarm”.</p>
+    <h3>Is this World Clock free?</h3>
+    <p>Yes, completely free. No registration required.</p>
   </section>
 
   <footer class="footer">
@@ -503,14 +476,13 @@ button:hover {
   </footer>
 </div>
 
-<!-- Settings Panel -->
 <div id="settingsPanel" class="settingsPanel">
-  <h3 style="margin-top:0;">Settings</h3>
+  <h3 style="margin-top:0; color:#be185d;">Settings</h3>
   <div class="toggle">
     Optimize
     <input type="checkbox" id="optimizeToggle">
   </div>
-  <button id="closeSettings" style="width:100%; margin-top:10px;">Close</button>
+  <button id="closeSettings" style="width:100%; margin-top:12px; background:#db2777; color:white; border:none;">Close</button>
 </div>
 
 <script>
@@ -604,11 +576,7 @@ document.getElementById("setAlarm").onclick = () => {
     alert("Select time");
     return;
   }
-  alarm = {
-    zone: alarmCity.value,
-    time: alarmTime.value,
-    fired: false
-  };
+  alarm = { zone: alarmCity.value, time: alarmTime.value, fired: false };
   localStorage.setItem("alarm", JSON.stringify(alarm));
   alert("Alarm set ✔");
 };
@@ -644,18 +612,11 @@ function updateClocks() {
       const timeEl = c.querySelector(".time");
       const dateEl = c.querySelector(".date");
 
-      if (timeEl.textContent !== timeStr) {
-        timeEl.textContent = timeStr;
-      }
-      if (dateEl.textContent !== dateStr) {
-        dateEl.textContent = dateStr;
-      }
-    } catch (e) {
-      console.error("Timezone error:", c.z);
-    }
+      if (timeEl.textContent !== timeStr) timeEl.textContent = timeStr;
+      if (dateEl.textContent !== dateStr) dateEl.textContent = dateStr;
+    } catch (e) {}
   });
 
-  // Alarm check
   if (alarm && !alarm.fired) {
     const check = now.toLocaleTimeString("en-GB", {
       timeZone: alarm.zone,
