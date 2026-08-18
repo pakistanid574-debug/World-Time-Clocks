@@ -561,7 +561,6 @@ const zones = [
   {c:"Copenhagen 🇩🇰", z:"Europe/Copenhagen"}
 ];
 
-
 const wrap = document.getElementById("clocks");
 const alarmCity = document.getElementById("alarmCity");
 const alarmTime = document.getElementById("alarmTime");
@@ -593,7 +592,8 @@ zones.forEach(z => {
       timeZone: z.z,
       hour: "2-digit",
       minute: "2-digit",
-      second: "2-digit"
+      second: "2-digit",
+      hour12: true
     });
     navigator.clipboard.writeText(t);
   };
@@ -625,7 +625,6 @@ function updateClocks() {
   const now = new Date();
 
   document.querySelectorAll(".clock").forEach(c => {
-    // Better & more accurate way
     const timeStr = now.toLocaleTimeString("en-US", {
       timeZone: c.z,
       hour: "2-digit",
@@ -664,13 +663,10 @@ function updateClocks() {
     }
   }
 
-  // Update every second (more stable)
+  // Always update every second (more accurate & stable)
   setTimeout(updateClocks, 1000);
 }
-  } else {
-    requestAnimationFrame(updateClocks);
-  }
-}
+
 updateClocks();
 </script>
 </body>
