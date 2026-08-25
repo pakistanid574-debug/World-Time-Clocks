@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -622,4 +622,81 @@ zones.forEach(z => {
 
   d.querySelector(".copyBtn").onclick = () => {
     const now = new Date();
-    const t = now.to
+    const t = now.toLocaleTimeString("en-US", {
+      timeZone: z.z,
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: true
+    });
+    navigator.clipboard.writeText(t);
+  };
+});
+
+document.getElementById("setAlarm").onclick = () => {
+  if (!alarmTime.value) {
+    alert("Select time");
+    return;
+  }
+  alarm = { zone: alarmCity.value, time: alarmTime.value, fired: false };
+  localStorage.setItem("alarm", JSON.stringify(alarm));
+  alert("Alarm set ✔");
+};
+
+openSettings.onclick = () => settingsPanel.style.display = "block";
+closeSettings.onclick = () => settingsPanel.style.display = "none";
+
+optimizeToggle.onchange = () => {
+  optimize = optimizeToggle.checked;
+  localStorage.setItem("optimize", optimize);
+};
+
+function updateClocks() {
+  const now = new Date();
+
+  document.querySelectorAll(".clock").forEach(c => {
+    try {
+      const timeStr = now.toLocaleTimeString("en-US", {
+        timeZone: c.z,
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true
+      });
+
+      const dateStr = now.toLocaleDateString("en-US", {
+        timeZone: c.z,
+        weekday: "long",
+        day: "numeric",
+        month: "short"
+      });
+
+      const timeEl = c.querySelector(".time");
+      const dateEl = c.querySelector(".date");
+
+      if (timeEl.textContent !== timeStr) timeEl.textContent = timeStr;
+      if (dateEl.textContent !== dateStr) dateEl.textContent = dateStr;
+    } catch (e) {}
+  });
+
+  if (alarm && !alarm.fired) {
+    const check = now.toLocaleTimeString("en-GB", {
+      timeZone: alarm.zone,
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false
+    });
+    if (check === alarm.time) {
+      alarm.fired = true;
+      localStorage.setItem("alarm", JSON.stringify(alarm));
+      alert("🔔 Alarm Time!");
+    }
+  }
+
+  setTimeout(updateClocks, 1000);
+}
+
+updateClocks();
+</script>
+</body>
+</html>
