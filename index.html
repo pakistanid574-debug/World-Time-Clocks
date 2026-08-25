@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -31,21 +31,28 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://world-time-clocks.vercel.app/">
 
-<meta name="theme-color" content="#db2777">
+<meta name="theme-color" content="#10b981">
 <meta name="author" content="Hassan Alvi">
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
 :root {
-  --bg: #fdf2f8;
-  --text: #831843;
-  --muted: #9d174d;
-  --card: #ffffff;
-  --border: #fbcfe8;
-  --accent: #db2777;
-  --accent-dark: #be185d;
-  --header-bg: linear-gradient(135deg, #db2777, #9d174d);
-  --pink-light: #fce7f3;
-  --pink-glow: rgba(219, 39, 119, 0.15);
+  --bg-dark: #0a0d0c;
+  --bg-card: #121816;
+  --text-main: #f0fdf4;
+  --text-muted: #86efac;
+  --text-dim: #9ca3af;
+  
+  /* Demon Slayer Tanjiro Palette */
+  --ds-green: #10b981;
+  --ds-green-glow: rgba(16, 185, 129, 0.35);
+  --ds-green-bright: #34d399;
+  --ds-dark-pattern: #0d1f18;
+  --ds-black: #050807;
+  --ds-border: rgba(16, 185, 129, 0.2);
+  
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
 
 * {
@@ -55,329 +62,396 @@
 body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--bg-dark);
+  /* Subtle Tanjiro Haori Checkered Background Pattern */
+  background-image: 
+    linear-gradient(45deg, var(--ds-dark-pattern) 25%, transparent 25%), 
+    linear-gradient(-45deg, var(--ds-dark-pattern) 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, var(--ds-dark-pattern) 75%), 
+    linear-gradient(-45deg, transparent 75%, var(--ds-dark-pattern) 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
   line-height: 1.6;
 }
 
 /* ===== HEADER ===== */
 .header {
-  background: var(--header-bg);
-  color: white;
-  padding: 14px 20px;
+  background: rgba(5, 8, 7, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--ds-green);
+  padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 16px;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 4px 20px rgba(219, 39, 119, 0.3);
+  box-shadow: 0 4px 25px rgba(16, 185, 129, 0.25);
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.3rem;
-  font-weight: 700;
+  gap: 12px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px var(--ds-green-glow);
 }
 
 .logo svg {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
+  filter: drop-shadow(0 0 8px var(--ds-green));
 }
 
 .header-right {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .social-btn {
   display: flex;
   align-items: center;
-  gap: 7px;
-  padding: 8px 14px;
+  gap: 8px;
+  padding: 9px 16px;
   border-radius: 999px;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.2s;
-  border: 1px solid rgba(255,255,255,0.2);
+  font-weight: 700;
+  font-size: 0.88rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .youtube-btn {
-  background: #ff0000;
+  background: #dc2626;
   color: white;
 }
-.youtube-btn:hover { background: #cc0000; }
+.youtube-btn:hover { 
+  background: #ef4444; 
+  box-shadow: 0 0 15px rgba(220, 38, 38, 0.6);
+  transform: translateY(-2px);
+}
 
 .github-btn {
-  background: #24292f;
+  background: #111827;
   color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
-.github-btn:hover { background: #1a1f24; }
+.github-btn:hover { 
+  background: #1f2937;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
 
 .instagram-btn {
   background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
   color: white;
 }
-.instagram-btn:hover { opacity: 0.9; }
-
-.social-btn svg {
-  width: 17px;
-  height: 17px;
+.instagram-btn:hover { 
+  opacity: 0.95;
+  box-shadow: 0 0 15px rgba(220, 39, 99, 0.5);
+  transform: translateY(-2px);
 }
 
-/* ===== MAIN ===== */
+.social-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ===== MAIN CONTAINER ===== */
 .container {
-  max-width: 900px;
+  max-width: 950px;
   margin: 0 auto;
-  padding: 24px 16px;
+  padding: 32px 20px;
 }
 
 h1 {
-  font-size: 1.9rem;
-  margin: 10px 0 8px;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 10px 0 10px;
   text-align: center;
-  color: var(--accent-dark);
-  background: linear-gradient(90deg, #db2777, #9d174d);
+  background: linear-gradient(135deg, #ffffff 0%, var(--ds-green-bright) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px var(--ds-green-glow);
+  letter-spacing: -0.5px;
 }
 
 .subtitle {
   text-align: center;
-  color: var(--muted);
-  margin-bottom: 28px;
+  color: var(--text-dim);
+  margin-bottom: 32px;
   font-size: 1.05rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
+/* ===== CONTROLS ===== */
 .controls {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   justify-content: center;
-  margin-bottom: 28px;
+  margin-bottom: 36px;
+  background: rgba(18, 24, 22, 0.8);
+  padding: 16px;
+  border-radius: 999px;
+  border: 1px solid var(--ds-border);
+  box-shadow: var(--card-shadow);
 }
 
 button, input, select {
-  padding: 12px 18px;
+  padding: 12px 20px;
   border-radius: 999px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--text);
+  border: 1px solid var(--ds-border);
+  background: var(--ds-black);
+  color: var(--text-main);
   font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: all 0.2s;
+  font-size: 0.92rem;
+  outline: none;
+  transition: all 0.25s ease;
 }
 
-button:hover {
-  background: var(--pink-light);
-  border-color: var(--accent);
+select option {
+  background: var(--bg-card);
+  color: var(--text-main);
+}
+
+button:hover, select:hover, input:hover {
+  border-color: var(--ds-green);
+  box-shadow: 0 0 10px var(--ds-green-glow);
 }
 
 #setAlarm {
-  background: var(--accent);
-  color: white;
+  background: var(--ds-green);
+  color: var(--ds-black);
   border: none;
+  font-weight: 800;
 }
 #setAlarm:hover {
-  background: var(--accent-dark);
+  background: var(--ds-green-bright);
+  box-shadow: 0 0 20px var(--ds-green-glow);
+  transform: scale(1.03);
 }
 
+#openSettings {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ===== CLOCKS DISPLAY ===== */
 #clocks {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
 .clock {
-  padding: 18px 20px;
-  border-radius: 18px;
-  background: var(--card);
-  border: 1px solid var(--border);
+  padding: 20px 24px;
+  border-radius: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--ds-border);
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
-  box-shadow: 0 4px 15px var(--pink-glow);
-  transition: transform 0.2s, box-shadow 0.2s;
+  gap: 12px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.clock::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: var(--ds-green);
+  box-shadow: 0 0 10px var(--ds-green);
 }
 
 .clock:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(219, 39, 119, 0.2);
+  transform: translateY(-3px);
+  border-color: var(--ds-green);
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.25);
 }
 
 .clock h3 {
   flex-basis: 100%;
-  margin: 0 0 6px 0;
-  font-size: 1.15rem;
-  color: var(--accent-dark);
+  margin: 0 0 4px 0;
+  font-size: 1.2rem;
+  color: var(--text-main);
+  font-weight: 700;
 }
 
 .time {
-  font-size: 1.55rem;
-  font-weight: 700;
-  color: var(--accent);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: var(--ds-green-bright);
+  text-shadow: 0 0 12px var(--ds-green-glow);
+  font-variant-numeric: tabular-nums;
 }
 
 .date {
-  font-size: 0.88rem;
-  color: var(--muted);
+  font-size: 0.9rem;
+  color: var(--text-dim);
+  font-weight: 500;
 }
 
 .copyBtn {
-  padding: 8px 16px;
+  padding: 9px 18px;
   font-size: 0.88rem;
-  background: var(--pink-light);
-  border: 1px solid var(--border);
-  color: var(--accent-dark);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid var(--ds-border);
+  color: var(--ds-green-bright);
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 700;
 }
 .copyBtn:hover {
-  background: var(--accent);
-  color: white;
+  background: var(--ds-green);
+  color: var(--ds-black);
+  box-shadow: 0 0 15px var(--ds-green-glow);
 }
 
+/* ===== SETTINGS PANEL ===== */
 .settingsPanel {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
-  padding: 24px;
-  border-radius: 20px;
-  border: 1px solid var(--border);
+  background: var(--bg-card);
+  padding: 28px;
+  border-radius: 24px;
+  border: 1px solid var(--ds-green);
   display: none;
   z-index: 200;
-  width: 270px;
-  box-shadow: 0 15px 40px rgba(219, 39, 119, 0.25);
+  width: 300px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px var(--ds-green-glow);
 }
 
 .toggle {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 16px 0;
-  font-weight: 600;
-  color: var(--accent-dark);
+  margin: 20px 0;
+  font-weight: 700;
+  color: var(--text-main);
 }
 
-.seo-content {
-  background: var(--card);
-  border-radius: 18px;
-  padding: 24px;
-  margin: 30px 0;
-  text-align: left;
-  border: 1px solid var(--border);
-  box-shadow: 0 4px 15px var(--pink-glow);
-}
-
-.seo-content h2 {
-  color: var(--accent);
-  margin-top: 0;
-  font-size: 1.35rem;
-}
-
-.seo-content h3 {
-  margin-top: 18px;
-  color: var(--accent-dark);
-}
-
-.seo-content a {
-  color: var(--accent);
-  font-weight: 600;
-}
-
-/* ===== BLOG SECTION ===== */
-.blog-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 15px var(--pink-glow);
-  transition: transform 0.2s;
+/* ===== SEO & BLOG SECTIONS ===== */
+.seo-content, .blog-card {
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 24px;
+  border: 1px solid var(--ds-border);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.3s;
 }
 
 .blog-card:hover {
   transform: translateY(-3px);
+  border-color: rgba(16, 185, 129, 0.4);
 }
 
-.blog-card h3 {
-  color: var(--accent-dark);
+.seo-content h2, .blog-card h3 {
+  color: var(--ds-green-bright);
   margin-top: 0;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.seo-content h3 {
+  margin-top: 20px;
+  color: var(--text-main);
 }
 
 .blog-meta {
   font-size: 0.85rem;
-  color: var(--muted);
-  margin-bottom: 12px;
+  color: var(--ds-green);
+  margin-bottom: 14px;
+  font-weight: 600;
 }
 
+.seo-content p, .blog-card p, .seo-content li {
+  color: #d1d5db;
+}
+
+/* ===== NAVIGATION ===== */
 .nav-links {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
-  margin: 20px 0 30px;
+  margin: 24px 0 36px;
 }
 
 .nav-links a {
-  background: var(--card);
-  padding: 9px 18px;
+  background: var(--bg-card);
+  padding: 10px 20px;
   border-radius: 999px;
   text-decoration: none;
-  color: var(--accent-dark);
+  color: var(--text-main);
   font-weight: 600;
-  border: 1px solid var(--border);
+  border: 1px solid var(--ds-border);
   font-size: 0.9rem;
-  transition: all 0.2s;
+  transition: all 0.25s;
 }
+
 .nav-links a:hover {
-  background: var(--accent);
-  color: white;
-  border-color: var(--accent);
+  background: var(--ds-green);
+  color: var(--ds-black);
+  border-color: var(--ds-green);
+  box-shadow: 0 0 15px var(--ds-green-glow);
 }
 
 .city-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 14px;
+  gap: 10px;
+  margin-top: 16px;
 }
 
 .city-list span {
-  background: var(--pink-light);
-  color: var(--accent-dark);
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  border: 1px solid var(--border);
+  background: rgba(16, 185, 129, 0.08);
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border: 1px solid var(--ds-border);
 }
 
+/* ===== FOOTER ===== */
 .footer {
-  margin-top: 50px;
-  padding: 28px 16px;
+  margin-top: 60px;
+  padding: 32px 16px;
   text-align: center;
-  color: var(--muted);
-  font-size: 0.9rem;
-  border-top: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  border-top: 1px solid var(--ds-border);
+  background: rgba(5, 8, 7, 0.8);
 }
 
 .footer a {
-  color: var(--accent);
-  font-weight: 600;
+  color: var(--ds-green-bright);
+  font-weight: 700;
   text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 600px) {
@@ -389,7 +463,10 @@ button:hover {
     justify-content: center;
   }
   h1 {
-    font-size: 1.55rem;
+    font-size: 1.7rem;
+  }
+  .controls {
+    border-radius: 20px;
   }
 }
 </style>
@@ -400,10 +477,10 @@ button:hover {
 <header class="header">
   <div class="logo">
     <svg viewBox="0 0 100 100" fill="none">
-      <circle cx="50" cy="50" r="42" stroke="white" stroke-width="6"/>
-      <circle cx="50" cy="50" r="5" fill="white"/>
-      <line x1="50" y1="50" x2="50" y2="22" stroke="white" stroke-width="5" stroke-linecap="round"/>
-      <line x1="50" y1="50" x2="72" y2="50" stroke="white" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="50" cy="50" r="42" stroke="#10b981" stroke-width="6"/>
+      <circle cx="50" cy="50" r="5" fill="#34d399"/>
+      <line x1="50" y1="50" x2="50" y2="22" stroke="#34d399" stroke-width="5" stroke-linecap="round"/>
+      <line x1="50" y1="50" x2="72" y2="50" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
     </svg>
     <span>World Clock</span>
   </div>
@@ -448,13 +525,13 @@ button:hover {
   </div>
 
   <section id="clocks-section">
-    <h2 style="text-align:center; margin-bottom:18px; color:#be185d;">Live World Time in 30+ Cities</h2>
+    <h2 style="text-align:center; margin-bottom:20px; color:var(--ds-green-bright);">Live World Time in 30+ Cities</h2>
     <div id="clocks"></div>
   </section>
 
   <!-- BLOG SECTION -->
-  <section id="blogs-section" style="margin-top: 40px;">
-    <h2 style="text-align:center; margin-bottom:24px; color:#be185d;">World Clock & Time Zone Blog</h2>
+  <section id="blogs-section" style="margin-top: 50px;">
+    <h2 style="text-align:center; margin-bottom:28px; color:var(--ds-green-bright);">World Clock & Time Zone Blog</h2>
 
     <article class="blog-card">
       <h3>1. How Time Zones Work: A Complete Guide to World Time Difference</h3>
@@ -530,7 +607,7 @@ button:hover {
 
   <footer class="footer">
     <p>© 2025 World Clock by <strong>Hassan Alvi</strong> | Free Online World Time Zones Tool</p>
-    <p style="margin-top:8px;">
+    <p style="margin-top:10px;">
       <a href="#clocks-section">Back to Clocks</a> •
       <a href="#blogs-section">Blog</a> •
       <a href="#faq">FAQ</a>
@@ -539,164 +616,9 @@ button:hover {
 </div>
 
 <div id="settingsPanel" class="settingsPanel">
-  <h3 style="margin-top:0; color:#be185d;">Settings</h3>
+  <h3 style="margin-top:0; color:var(--ds-green-bright);">Settings</h3>
   <div class="toggle">
     Optimize
     <input type="checkbox" id="optimizeToggle">
   </div>
-  <button id="closeSettings" style="width:100%; margin-top:12px; background:#db2777; color:white; border:none;">Close</button>
-</div>
-
-<script>
-/*
-  ============================================
-  DEVELOPER / OWNER DETAILS (Hidden)
-  ============================================
-  Name           : Hassan Alvi
-  Age            : 15 Years
-  Born           : 5 kassi
-  Role           : Social Media Influencer
-  YouTube        : @leaksoff8
-  Instagram      : @leaksff8
-  GitHub         : pakistanid574-debug
-  ============================================
-*/
-
-const zones = [
-  {c:"New York 🇺🇸", z:"America/New_York"},
-  {c:"London 🇬🇧", z:"Europe/London"},
-  {c:"Riyadh 🇸🇦", z:"Asia/Riyadh"},
-  {c:"Dubai 🇦🇪", z:"Asia/Dubai"},
-  {c:"Karachi 🇵🇰", z:"Asia/Karachi"},
-  {c:"Manama 🇧🇭", z:"Asia/Bahrain"},
-  {c:"Tehran 🇮🇷", z:"Asia/Tehran"},
-  {c:"Zurich 🇨🇭", z:"Europe/Zurich"},
-  {c:"Seoul 🇰🇷", z:"Asia/Seoul"},
-  {c:"Jakarta 🇮🇩", z:"Asia/Jakarta"},
-  {c:"Tokyo 🇯🇵", z:"Asia/Tokyo"},
-  {c:"Bangkok 🇹🇭", z:"Asia/Bangkok"},
-  {c:"Shanghai 🇨🇳", z:"Asia/Shanghai"},
-  {c:"Kenya 🇰🇪", z:"Africa/Nairobi"},
-  {c:"Mumbai 🇮🇳", z:"Asia/Kolkata"},
-  {c:"Bishkek 🇰🇬", z:"Asia/Bishkek"},
-  {c:"Bogota 🇨🇴", z:"America/Bogota"},
-  {c:"Los Angeles 🇺🇸", z:"America/Los_Angeles"},
-  {c:"Dhaka 🇧🇩", z:"Asia/Dhaka"},
-  {c:"Manila 🇵🇭", z:"Asia/Manila"},
-  {c:"Baku 🇦🇿", z:"Asia/Baku"},
-  {c:"Doha 🇶🇦", z:"Asia/Qatar"},
-  {c:"Kabul 🇦🇫", z:"Asia/Kabul"},
-  {c:"Algiers 🇩🇿", z:"Africa/Algiers"},
-  {c:"Buenos Aires 🇦🇷", z:"America/Buenos_Aires"},
-  {c:"Dublin 🇮🇪", z:"Europe/Dublin"},
-  {c:"Sydney 🇦🇺", z:"Australia/Sydney"},
-  {c:"British Indian Ocean Territory 🇮🇴", z:"Indian/Chagos"},
-  {c:"Istanbul 🇹🇷", z:"Asia/Istanbul"},
-  {c:"Copenhagen 🇩🇰", z:"Europe/Copenhagen"}
-];
-
-const wrap = document.getElementById("clocks");
-const alarmCity = document.getElementById("alarmCity");
-const alarmTime = document.getElementById("alarmTime");
-const settingsPanel = document.getElementById("settingsPanel");
-const openSettings = document.getElementById("openSettings");
-const closeSettings = document.getElementById("closeSettings");
-const optimizeToggle = document.getElementById("optimizeToggle");
-
-let optimize = localStorage.getItem("optimize") === "true";
-optimizeToggle.checked = optimize;
-let alarm = JSON.parse(localStorage.getItem("alarm") || "null");
-
-zones.forEach(z => {
-  alarmCity.innerHTML += `<option value="${z.z}">${z.c}</option>`;
-  const d = document.createElement("div");
-  d.className = "clock";
-  d.innerHTML = `
-    <h3>${z.c}</h3>
-    <div class="date"></div>
-    <div class="time"></div>
-    <button class="copyBtn">📋 Copy</button>
-  `;
-  d.z = z.z;
-  wrap.appendChild(d);
-
-  d.querySelector(".copyBtn").onclick = () => {
-    const now = new Date();
-    const t = now.toLocaleTimeString("en-US", {
-      timeZone: z.z,
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-      hour12: true
-    });
-    navigator.clipboard.writeText(t);
-  };
-});
-
-document.getElementById("setAlarm").onclick = () => {
-  if (!alarmTime.value) {
-    alert("Select time");
-    return;
-  }
-  alarm = { zone: alarmCity.value, time: alarmTime.value, fired: false };
-  localStorage.setItem("alarm", JSON.stringify(alarm));
-  alert("Alarm set ✔");
-};
-
-openSettings.onclick = () => settingsPanel.style.display = "block";
-closeSettings.onclick = () => settingsPanel.style.display = "none";
-
-optimizeToggle.onchange = () => {
-  optimize = optimizeToggle.checked;
-  localStorage.setItem("optimize", optimize);
-};
-
-function updateClocks() {
-  const now = new Date();
-
-  document.querySelectorAll(".clock").forEach(c => {
-    try {
-      const timeStr = now.toLocaleTimeString("en-US", {
-        timeZone: c.z,
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: true
-      });
-
-      const dateStr = now.toLocaleDateString("en-US", {
-        timeZone: c.z,
-        weekday: "long",
-        day: "numeric",
-        month: "short"
-      });
-
-      const timeEl = c.querySelector(".time");
-      const dateEl = c.querySelector(".date");
-
-      if (timeEl.textContent !== timeStr) timeEl.textContent = timeStr;
-      if (dateEl.textContent !== dateStr) dateEl.textContent = dateStr;
-    } catch (e) {}
-  });
-
-  if (alarm && !alarm.fired) {
-    const check = now.toLocaleTimeString("en-GB", {
-      timeZone: alarm.zone,
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false
-    });
-    if (check === alarm.time) {
-      alarm.fired = true;
-      localStorage.setItem("alarm", JSON.stringify(alarm));
-      alert("🔔 Alarm Time!");
-    }
-  }
-
-  setTimeout(updateClocks, 1000);
-}
-
-updateClocks();
-</script>
-</body>
-</html>
+  <button id="closeSettings" style="width:100%; margin-top:16px; background:var(--ds-green); color:var(--ds-black); font-weight:800; border:
