@@ -20,14 +20,14 @@
 
 <meta name="google-site-verification" content="mqs9JNllYYrmpEj7YBh1NQzu8LO6x6gPJGXv8rbt-EQ" />
 
-<title>Free World Clock Online ⚡ Live Time in 30+ Cities | Karachi, Dubai, NY</title>
-<meta name="description" content="Check live current time anywhere in the world. Free World Clock with real-time updates for Karachi, Dubai, Riyadh, London, New York, Tokyo, Sydney + Alarm feature. Instant & accurate.">
-<meta name="keywords" content="world clock, live world clock, world time zones, online world clock, free world clock, time zone converter, current time in different countries, current time in Karachi, current time in Dubai">
+<title>Free World Clock Online ⚡ Live Time in 30+ Cities & Time Zone Guides</title>
+<meta name="description" content="Check live current time anywhere in the world. Free World Clock with real-time updates for Karachi, Dubai, Riyadh, London, NY + Alarm feature & Time Zone Blogs.">
+<meta name="keywords" content="world clock, live world clock, world time zones, online world clock, time zone converter, time difference guide, current time in Karachi, current time in Dubai">
 
 <link rel="canonical" href="https://world-time-clocks.vercel.app/">
 
-<meta property="og:title" content="Free World Clock Online ⚡ Live Time in 30+ Cities">
-<meta property="og:description" content="Check live current time anywhere in the world. Free World Clock with real-time updates + Alarm feature.">
+<meta property="og:title" content="Free World Clock Online ⚡ Live Time & Time Zone Blog">
+<meta property="og:description" content="Check live current time anywhere in the world. Free World Clock with real-time updates, Alarm feature, and SEO guides on time zones.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://world-time-clocks.vercel.app/">
 
@@ -58,7 +58,7 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* ===== HEADER ===== */
@@ -296,6 +296,33 @@ button:hover {
   font-weight: 600;
 }
 
+/* ===== BLOG SECTION ===== */
+.blog-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px var(--pink-glow);
+  transition: transform 0.2s;
+}
+
+.blog-card:hover {
+  transform: translateY(-3px);
+}
+
+.blog-card h3 {
+  color: var(--accent-dark);
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.blog-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
 .nav-links {
   display: flex;
   flex-wrap: wrap;
@@ -407,6 +434,7 @@ button:hover {
 
   <nav class="nav-links">
     <a href="#clocks-section">Live Clocks</a>
+    <a href="#blogs-section">Blog & Guides</a>
     <a href="#how-to-use">How to Use</a>
     <a href="#features">Features</a>
     <a href="#faq">FAQ</a>
@@ -424,6 +452,37 @@ button:hover {
     <div id="clocks"></div>
   </section>
 
+  <!-- BLOG SECTION -->
+  <section id="blogs-section" style="margin-top: 40px;">
+    <h2 style="text-align:center; margin-bottom:24px; color:#be185d;">World Clock & Time Zone Blog</h2>
+
+    <article class="blog-card">
+      <h3>1. How Time Zones Work: A Complete Guide to World Time Difference</h3>
+      <div class="blog-meta">Published by Hassan Alvi | Category: Time Zones</div>
+      <p>Have you ever wondered why Dubai is 1 hour behind Karachi, or why London is 5 hours behind Pakistan? Time zones are created based on the Earth's rotation around the Sun. The planet is divided into 24 time zones, each representing one hour of the day.</p>
+      <p>Using a live <strong>World Clock</strong> allows remote workers, travelers, and international businesses to manage global meetings without confusion. Coordinated Universal Time (UTC) serves as the baseline for all global time zone offsets.</p>
+    </article>
+
+    <article class="blog-card">
+      <h3>2. Karachi to Dubai & New York Time Difference Explained</h3>
+      <div class="blog-meta">Published by Hassan Alvi | Category: Guides</div>
+      <p>Managing international client calls or flying across continents requires knowing precise local times. Here is a quick time zone difference guide for key major cities:</p>
+      <ul>
+        <li><strong>Karachi (PKT - UTC+5):</strong> 1 hour ahead of Dubai, 5 hours ahead of GMT/London (Winter).</li>
+        <li><strong>Dubai (GST - UTC+4):</strong> 1 hour behind Pakistan standard time.</li>
+        <li><strong>New York (EST - UTC-5):</strong> 10 hours behind Karachi during Standard Time.</li>
+      </ul>
+      <p>Bookmark our live online World Clock to convert and monitor international times with one click!</p>
+    </article>
+
+    <article class="blog-card">
+      <h3>3. Why DST (Daylight Saving Time) Changes Global Time Schedules</h3>
+      <div class="blog-meta">Published by Hassan Alvi | Category: World Clock Insights</div>
+      <p>Daylight Saving Time (DST) is the practice of advancing clocks during warmer months so that darkness falls at a later clock time. Countries in Europe and North America shift their clocks forward by 1 hour in spring and back in autumn.</p>
+      <p>Countries like Pakistan, UAE, and Saudi Arabia do not observe DST. This is why the time difference between Asian cities and US/UK cities changes twice a year. Our real-time World Clock automatically updates these DST changes for 30+ cities globally.</p>
+    </article>
+  </section>
+
   <section class="seo-content" id="how-to-use">
     <h2>Free Online World Clock – Check Time Anywhere Instantly</h2>
     <p>Welcome to the best free <strong>World Clock</strong> tool. Instantly check the <strong>current time</strong> in major cities around the world including New York, London, Dubai, Riyadh, Karachi, Tokyo, Sydney, Mumbai and many more.</p>
@@ -432,6 +491,7 @@ button:hover {
       <li>Scroll down to see live time of 30+ cities</li>
       <li>Select any city and set an alarm using the time picker</li>
       <li>Click the Copy button to copy the current time of any city</li>
+      <li>Read our latest blogs to understand global time differences</li>
       <li>Use Settings to enable Optimize mode</li>
     </ul>
   </section>
@@ -442,6 +502,7 @@ button:hover {
       <li>Accurate live time for 30+ international cities</li>
       <li>Real-time time zone conversion</li>
       <li>Alarm feature for any selected city</li>
+      <li>SEO-optimized blogs & time zone guides</li>
       <li>One-click copy time functionality</li>
       <li>Mobile-friendly and fast loading</li>
       <li>No registration required – completely free</li>
@@ -471,6 +532,7 @@ button:hover {
     <p>© 2025 World Clock by <strong>Hassan Alvi</strong> | Free Online World Time Zones Tool</p>
     <p style="margin-top:8px;">
       <a href="#clocks-section">Back to Clocks</a> •
+      <a href="#blogs-section">Blog</a> •
       <a href="#faq">FAQ</a>
     </p>
   </footer>
@@ -560,81 +622,4 @@ zones.forEach(z => {
 
   d.querySelector(".copyBtn").onclick = () => {
     const now = new Date();
-    const t = now.toLocaleTimeString("en-US", {
-      timeZone: z.z,
-      hour: "2-digit",
-      minute: "2-digit",
-      second: "2-digit",
-      hour12: true
-    });
-    navigator.clipboard.writeText(t);
-  };
-});
-
-document.getElementById("setAlarm").onclick = () => {
-  if (!alarmTime.value) {
-    alert("Select time");
-    return;
-  }
-  alarm = { zone: alarmCity.value, time: alarmTime.value, fired: false };
-  localStorage.setItem("alarm", JSON.stringify(alarm));
-  alert("Alarm set ✔");
-};
-
-openSettings.onclick = () => settingsPanel.style.display = "block";
-closeSettings.onclick = () => settingsPanel.style.display = "none";
-
-optimizeToggle.onchange = () => {
-  optimize = optimizeToggle.checked;
-  localStorage.setItem("optimize", optimize);
-};
-
-function updateClocks() {
-  const now = new Date();
-
-  document.querySelectorAll(".clock").forEach(c => {
-    try {
-      const timeStr = now.toLocaleTimeString("en-US", {
-        timeZone: c.z,
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: true
-      });
-
-      const dateStr = now.toLocaleDateString("en-US", {
-        timeZone: c.z,
-        weekday: "long",
-        day: "numeric",
-        month: "short"
-      });
-
-      const timeEl = c.querySelector(".time");
-      const dateEl = c.querySelector(".date");
-
-      if (timeEl.textContent !== timeStr) timeEl.textContent = timeStr;
-      if (dateEl.textContent !== dateStr) dateEl.textContent = dateStr;
-    } catch (e) {}
-  });
-
-  if (alarm && !alarm.fired) {
-    const check = now.toLocaleTimeString("en-GB", {
-      timeZone: alarm.zone,
-      hour: "2-digit",
-      minute: "2-digit",
-      hour12: false
-    });
-    if (check === alarm.time) {
-      alarm.fired = true;
-      localStorage.setItem("alarm", JSON.stringify(alarm));
-      alert("🔔 Alarm Time!");
-    }
-  }
-
-  setTimeout(updateClocks, 1000);
-}
-
-updateClocks();
-</script>
-</body>
-</html>
+    const t = now.to
