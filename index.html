@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-<html lang="eng">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +11,7 @@
   Owner Name     : Hassan Alvi
   Age            : 15 Years
   Born in        : 5 kassi
-  Professionl     : Social Media Influencer
+  Profession     : Social Media Influencer
   YouTube        : https://youtube.com/@leaksoff8
   Instagram      : https://www.instagram.com/leaksff8/
   GitHub         : https://github.com/pakistanid574-debug
@@ -55,9 +54,7 @@
   --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -102,24 +99,10 @@ body {
   text-shadow: 0 0 10px var(--ds-green-glow);
 }
 
-.logo svg {
-  width: 36px;
-  height: 36px;
-  filter: drop-shadow(0 0 8px var(--ds-green));
-}
+.logo svg { width: 36px; height: 36px; filter: drop-shadow(0 0 8px var(--ds-green)); }
+.header-right { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-/* Base Social & Action Button Styles with Shine Effect */
-.social-btn, button, .nav-links a {
-  position: relative;
-  overflow: hidden;
-}
+.social-btn, button, .nav-links a { position: relative; overflow: hidden; }
 
 .social-btn::after, button::after, .nav-links a::after {
   content: '';
@@ -128,20 +111,13 @@ body {
   left: -60%;
   width: 40px;
   height: 200%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.3) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
   transform: rotate(30deg);
   transition: all 0.6s ease;
   pointer-events: none;
 }
 
-.social-btn:hover::after, button:hover::after, .nav-links a:hover::after {
-  left: 130%;
-}
+.social-btn:hover::after, button:hover::after, .nav-links a:hover::after { left: 130%; }
 
 .social-btn {
   display: flex;
@@ -166,12 +142,7 @@ body {
 .instagram-btn:hover { opacity: 0.95; box-shadow: 0 0 18px rgba(220, 39, 99, 0.6); transform: translateY(-2px); }
 
 .social-btn svg { width: 18px; height: 18px; }
-
-.container {
-  max-width: 950px;
-  margin: 0 auto;
-  padding: 32px 20px;
-}
+.container { max-width: 950px; margin: 0 auto; padding: 32px 20px; }
 
 h1 {
   font-size: 2.2rem;
@@ -229,7 +200,6 @@ button:hover, select:hover, input:hover { border-color: var(--ds-green); box-sha
 
 #clocks { display: flex; flex-direction: column; gap: 16px; }
 
-/* Clock Card with Continuous Glow & Hover Sweep Effect */
 .clock {
   padding: 20px 24px;
   border-radius: 20px;
@@ -257,7 +227,6 @@ button:hover, select:hover, input:hover { border-color: var(--ds-green); box-sha
   box-shadow: 0 0 12px var(--ds-green);
 }
 
-/* Diagonal Shine Sweep for Clock Cards */
 .clock::after {
   content: '';
   position: absolute;
@@ -265,26 +234,14 @@ button:hover, select:hover, input:hover { border-color: var(--ds-green); box-sha
   left: -70%;
   width: 60px;
   height: 200%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(52, 211, 153, 0.15) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(52, 211, 153, 0.15) 50%, rgba(255, 255, 255, 0) 100%);
   transform: rotate(30deg);
   transition: all 0.7s ease;
   pointer-events: none;
 }
 
-.clock:hover::after {
-  left: 130%;
-}
-
-.clock:hover {
-  transform: translateY(-3px);
-  border-color: var(--ds-green-bright);
-  box-shadow: 0 12px 35px rgba(16, 185, 129, 0.3);
-}
+.clock:hover::after { left: 130%; }
+.clock:hover { transform: translateY(-3px); border-color: var(--ds-green-bright); box-shadow: 0 12px 35px rgba(16, 185, 129, 0.3); }
 
 .clock h3 { flex-basis: 100%; margin: 0 0 4px 0; font-size: 1.2rem; color: var(--text-main); font-weight: 700; }
 .time { font-size: 1.75rem; font-weight: 800; color: var(--ds-green-bright); text-shadow: 0 0 14px var(--ds-green-glow); font-variant-numeric: tabular-nums; }
@@ -338,21 +295,13 @@ button:hover, select:hover, input:hover { border-color: var(--ds-green); box-sha
   left: -70%;
   width: 80px;
   height: 200%;
-  background: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(52, 211, 153, 0.08) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(52, 211, 153, 0.08) 50%, rgba(255, 255, 255, 0) 100%);
   transform: rotate(30deg);
   transition: all 0.8s ease;
   pointer-events: none;
 }
 
-.seo-content:hover::after, .blog-card:hover::after {
-  left: 140%;
-}
-
+.seo-content:hover::after, .blog-card:hover::after { left: 140%; }
 .blog-card:hover { transform: translateY(-3px); border-color: rgba(16, 185, 129, 0.5); box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2); }
 .seo-content h2, .blog-card h3 { color: var(--ds-green-bright); margin-top: 0; font-size: 1.35rem; font-weight: 700; }
 .seo-content h3 { margin-top: 20px; color: var(--text-main); }
@@ -437,104 +386,5 @@ button:hover, select:hover, input:hover { border-color: var(--ds-green); box-sha
       Instagram
     </a>
   </div>
-</header>
-
-<div class="container">
-  <h1>World Clock - Live World Time Zones</h1>
-  <p class="subtitle">
-    Free online World Clock showing live current time in 30+ cities including New York, London, Dubai, Riyadh, Karachi, Tokyo and Sydney.
-  </p>
-
-  <nav class="nav-links">
-    <a href="#clocks-section">Live Clocks</a>
-    <a href="#blogs-section">Blog & Guides</a>
-    <a href="#how-to-use">How to Use</a>
-    <a href="#features">Features</a>
-    <a href="#faq">FAQ</a>
-  </nav>
-
-  <div class="controls">
-    <select id="alarmCity"></select>
-    <input type="time" id="alarmTime">
-    <button id="setAlarm">🔔 Add Alarm</button>
-    <button id="openSettings">⚙️ Settings</button>
-  </div>
-
-  <section id="clocks-section">
-    <h2 style="text-align:center; margin-bottom:20px; color:var(--ds-green-bright);">Live World Time in 30+ Cities</h2>
-    <div id="clocks"></div>
-  </section>
-
-  <!-- Naye SEO Blogs Yahan Add Kiye Gaye Hain -->
-  <section id="blogs-section" style="margin-top: 50px;">
-    <h2 style="text-align:center; margin-bottom:28px; color:var(--ds-green-bright);">World Clock & Time Zone Blog</h2>
-    
-    <article class="blog-card">
-      <h3>1. How Time Zones Work: A Complete Guide to World Time Difference</h3>
-      <div class="blog-meta">Published by Hassan Alvi | Category: Time Zones</div>
-      <p>Have you ever wondered why Dubai is 1 hour behind Karachi, or why London is 5 hours behind Pakistan? Time zones are created based on the Earth's rotation around the Sun. The planet is divided into 24 time zones, each representing one hour of the day. Coordinated Universal Time (UTC) serves as the primary time standard by which the world regulates clocks and time.</p>
-    </article>
-
-    <article class="blog-card">
-      <h3>2. Karachi to Dubai & New York Time Difference Explained</h3>
-      <div class="blog-meta">Published by Hassan Alvi | Category: Guides</div>
-      <p>Managing international client calls or flying across continents requires knowing precise local times. Pakistan Standard Time (PKT) is UTC+5, whereas Gulf Standard Time (GST) in Dubai is UTC+4. New York follows Eastern Time (EST/EDT), making it 9 to 10 hours behind Pakistan depending on Daylight Saving Time (DST). Using a live world clock ensures seamless cross-border communication.</p>
-    </article>
-
-    <article class="blog-card">
-      <h3>3. What is Daylight Saving Time (DST) and Which Countries Use It?</h3>
-      <div class="blog-meta">Published by Hassan Alvi | Category: Global Time Standards</div>
-      <p>Daylight Saving Time (DST) is the practice of advancing clocks during warmer months so that darkness falls at a later clock hour. Countries in North America and Europe actively switch to DST, resulting in seasonal time changes twice a year. Understanding DST helps remote workers and global businesses avoid missing important meetings.</p>
-    </article>
-
-    <article class="blog-card">
-      <h3>4. Tips for Managing Remote Teams Across Multiple Time Zones</h3>
-      <div class="blog-meta">Published by Hassan Alvi | Category: Productivity</div>
-      <p>Working in a distributed global team can be challenging when team members span from Tokyo (UTC+9) to Los Angeles (UTC-7). Overlapping working hours, clear communication channels, and keeping track of live city times using online world clock tools are key strategies to boost cross-cultural team productivity.</p>
-    </article>
-  </section>
-
-  <section class="seo-content" id="how-to-use">
-    <h2>Free Online World Clock – Check Time Anywhere Instantly</h2>
-    <p>Welcome to the best free <strong>World Clock</strong> tool. Easily monitor global business hours, set alarms for foreign time zones, and stay connected with international family and colleagues with ease.</p>
-  </section>
-
-  <section class="seo-content" id="features">
-    <h2>Key Features of Our Live World Clock</h2>
-    <div class="city-list">
-      <span>New York</span><span>London</span><span>Dubai</span><span>Riyadh</span><span>Karachi</span>
-      <span>Tokyo</span><span>Sydney</span><span>Mumbai</span>
-    </div>
-  </section>
-
-  <section class="seo-content" id="faq">
-    <h2>Frequently Asked Questions</h2>
-    <h3>What is a World Clock?</h3>
-    <p>A World Clock shows the current local time of multiple cities across different time zones.</p>
-  </section>
-
-  <footer class="footer">
-    <p>© 2025 World Clock by <strong>Hassan Alvi</strong> | Free Online World Time Zones Tool</p>
-  </footer>
-</div>
-
-<div id="settingsPanel" class="settingsPanel">
-  <h3 style="margin-top:0; color:var(--ds-green-bright);">Settings</h3>
-  <div class="toggle">
-    Optimize
-    <input type="checkbox" id="optimizeToggle">
-  </div>
-  <button id="closeSettings" style="width:100%; margin-top:16px; background:var(--ds-green); color:var(--ds-black); font-weight:800; border:none;">Close</button>
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const zones = [
-    {c:"New York 🇺🇸", z:"America/New_York"},
-    {c:"London 🇬🇧", z:"Europe/London"},
-    {c:"Riyadh 🇸🇦", z:"Asia/Riyadh"},
-    {c:"Dubai 🇦🇪", z:"Asia/Dubai"},
-    {c:"Karachi 🇵🇰", z:"Asia/Karachi"},
-    {c:"Manama 🇧🇭", z:"Asia/Bahrain"},
-    {c:"Tehran 🇮🇷", z:"Asia/Tehran"},
-   
+  </header>
+  
