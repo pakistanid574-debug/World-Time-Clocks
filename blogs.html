@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>World Clock & Time Zone Blog | Guides & News</title>
+<meta name="description" content="Read expert guides on time zones, Daylight Saving Time (DST), cross-border team productivity, and time differences between world cities.">
+<link rel="canonical" href="https://world-time-clocks.vercel.app/blogs.html">
+
+<meta name="theme-color" content="#10b981">
+<meta name="author" content="Hassan Alvi">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+:root {
+  --bg-dark: #0a0d0c;
+  --bg-card: #121816;
+  --text-main: #f0fdf4;
+  --text-muted: #86efac;
+  --text-dim: #9ca3af;
+  
+  --ds-green: #10b981;
+  --ds-green-glow: rgba(16, 185, 129, 0.35);
+  --ds-green-bright: #34d399;
+  --ds-dark-pattern: #0d1f18;
+  --ds-black: #050807;
+  --ds-border: rgba(16, 185, 129, 0.2);
+  
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  background-image: 
+    linear-gradient(45deg, var(--ds-dark-pattern) 25%, transparent 25%), 
+    linear-gradient(-45deg, var(--ds-dark-pattern) 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, var(--ds-dark-pattern) 75%), 
+    linear-gradient(-45deg, transparent 75%, var(--ds-dark-pattern) 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+}
+
+.header {
+  background: rgba(5, 8, 7, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--ds-green);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 25px rgba(16, 185, 129, 0.25);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px var(--ds-green-glow);
+  text-decoration: none;
+}
+
+.logo svg {
+  width: 36px;
+  height: 36px;
+  filter: drop-shadow(0 0 8px var(--ds-green));
+}
+
+.back-btn {
+  background: var(--ds-green);
+  color: var(--ds-black);
+  padding: 9px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: var(--ds-green-bright);
+  box-shadow: 0 0 18px var(--ds-green-glow);
+  transform: translateY(-2px);
+}
+
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin: 10px 0 10px;
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, var(--ds-green-bright) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px var(--ds-green-glow);
+  letter-spacing: -0.5px;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+  font-size: 1.05rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-card {
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 24px;
+  border: 1px solid var(--ds-border);
+  box-shadow: var(--card-shadow);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.blog-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -70%;
+  width: 80px;
+  height: 200%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(52, 211, 153, 0.08) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  transition: all 0.8s ease;
+  pointer-events: none;
+}
+
+.blog-card:hover::after { left: 140%; }
+.blog-card:hover { transform: translateY(-3px); border-color: rgba(16, 185, 129, 0.5); box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2); }
+.blog-card h3 { color: var(--ds-green-bright); margin-top: 0; font-size: 1.35rem; font-weight: 700; }
+.blog-meta { font-size: 0.85rem; color: var(--ds-green); margin-bottom: 14px; font-weight: 600; }
+.blog-card p { color: #d1d5db; }
+
+.footer {
+  margin-top: 60px;
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  border-top: 1px solid var(--ds-border);
+  background: rgba(5, 8, 7, 0.8);
+}
+.footer a { color: var(--ds-green-bright); font-weight: 700; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="index.html" class="logo">
+    <svg viewBox="0 0 100 100" fill="none">
+      <circle cx="50" cy="50" r="42" stroke="#10b981" stroke-width="6"/>
+      <circle cx="50" cy="50" r="5" fill="#34d399"/>
+      <line x1="50" y1="50" x2="50" y2="22" stroke="#34d399" stroke-width="5" stroke-linecap="round"/>
+      <line x1="50" y1="50" x2="72" y2="50" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
+    </svg>
+    <span>World Clock</span>
+  </a>
+
+  <div>
+    <a href="index.html" class="back-btn">⏱️ Back to World Clock</a>
+  </div>
+</header>
+
+<div class="container">
+  <h1>World Clock & Time Zone Blog</h1>
+  <p class="subtitle">
+    Explore articles and guides on how global time zones work, managing remote teams, and time differences.
+  </p>
+
+  <section id="blogs-section">
+    <article class="blog-card">
+      <h3>1. How Time Zones Work: A Complete Guide to World Time Difference</h3>
+      <div class="blog-meta">Published by Hassan Alvi | Category: Time Zones</div>
+      <p>Have you ever wondered why Dubai is 1 hour behind Karachi, or why London is 5 hours behind Pakistan? Time zones are created based on the Earth's rotation around the Sun. The planet is divided into 24 time zones, each representing one hour of the day. Coordinated Universal Time (UTC) serves as the primary time standard by which the world regulates clocks and time.</p>
+    </article>
+
+    <article class="blog-card">
+      <h3>2. Karachi to Dubai & New York Time Difference Explained</h3>
+      <div class="blog-meta">Published by Hassan Alvi | Category: Guides</div>
+      <p>Managing international client calls or flying across continents requires knowing precise local times. Pakistan Standard Time (PKT) is UTC+5, whereas Gulf Standard Time (GST) in Dubai is UTC+4. New York follows Eastern Time (EST/EDT), making it 9 to 10 hours behind Pakistan depending on Daylight Saving Time (DST). Using a live world clock ensures seamless cross-border communication.</p>
+    </article>
+
+    <article class="blog-card">
+      <h3>3. What is Daylight Saving Time (DST) and Which Countries Use It?</h3>
+      <div class="blog-meta">Published by Hassan Alvi | Category: Global Time Standards</div>
+      <p>Daylight Saving Time (DST) is the practice of advancing clocks during warmer months so that darkness falls at a later clock hour. Countries in North America and Europe actively switch to DST, resulting in seasonal time changes twice a year. Understanding DST helps remote workers and global businesses avoid missing important meetings.</p>
+    </article>
+
+    <article class="blog-card">
+      <h3>4. Tips for Managing Remote Teams Across Multiple Time Zones</h3>
+      <div class="blog-meta">Published by Hassan Alvi | Category: Productivity</div>
+      <p>Working in a distributed global team can be challenging when team members span from Tokyo (UTC+9) to Los Angeles (UTC-7). Overlapping working hours, clear communication channels, and keeping track of live city times using online world clock tools are key strategies to boost cross-cultural team productivity.</p>
+    </article>
+  </section>
+
+  <footer class="footer">
+    <p>© 2025 World Clock by <strong>Hassan Alvi</strong> | Free Online World Time Zones Tool</p>
+  </footer>
+</div>
+
+</body>
+</html>
