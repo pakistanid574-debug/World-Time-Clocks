@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="mqs9JNllYYrmpEj7YBh1NQzu8LO6x6gPJGXv8rbt-EQ" /> <!--[span_9](start_span)[span_9](end_span) -->
+
+<!-- 5. Meta Title -->
+<title>World Clock Live | Current Time in USA, UK, Canada, Pakistan & India</title> <!--[span_10](start_span)[span_10](end_span) -->
+
+<!-- 6. Meta Description -->
+<meta name="description" content="Check live current time in Florida (USA), Manchester (UK), Canada, Pakistan, and India. Free World Clock with live updates, time converter, and alarm features."> <!--[span_11](start_span)[span_11](end_span) -->
+
+<!-- 1. Keywords -->
+<meta name="keywords" content="world clock live, current time in florida, current time in manchester, live time pakistan, current time india, time zone canada, us to uk time converter"> <!--[span_12](start_span)[span_12](end_span) -->
+
+<!-- 7. Canonical URL -->
+<link rel="canonical" href="https://world-time-clocks.vercel.app/"> <!--[span_13](start_span)[span_13](end_span) -->
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:title" content="World Clock Live - USA, UK, Canada, Pakistan & India Time"> <!--[span_14](start_span)[span_14](end_span) -->
+<meta property="og:description" content="Check accurate real-time updates for Florida, Manchester, Karachi, Mumbai, Toronto, and global time zones."> <!--[span_15](start_span)[span_15](end_span) -->
+<meta property="og:type" content="website"> <!--[span_16](start_span)[span_16](end_span) -->
+<meta property="og:url" content="https://world-time-clocks.vercel.app/"> <!--[span_17](start_span)[span_17](end_span) -->
+
+<meta name="theme-color" content="#10b981"> <!--[span_18](start_span)[span_18](end_span) -->
+<meta name="author" content="Hassan Alvi"> <!--[span_19](start_span)[span_19](end_span) -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap'); /*[span_20](start_span)[span_20](end_span) */
+
+:root {
+  --bg-dark: #0a0d0c;
+  --bg-card: #121816;
+  --text-main: #f0fdf4;
+  --text-muted: #86efac;
+  --text-dim: #9ca3af;
+  --ds-green: #10b981;
+  --ds-green-glow: rgba(16, 185, 129, 0.35);
+  --ds-green-bright: #34d399;
+  --ds-dark-pattern: #0d1f18;
+  --ds-black: #050807;
+  --ds-border: rgba(16, 185, 129, 0.2);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+} /*[span_21](start_span)[span_21](end_span) */
+
+* { box-sizing: border-box; } /*[span_22](start_span)[span_22](end_span) */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  background-image: 
+    linear-gradient(45deg, var(--ds-dark-pattern) 25%, transparent 25%), 
+    linear-gradient(-45deg, var(--ds-dark-pattern) 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, var(--ds-dark-pattern) 75%), 
+    linear-gradient(-45deg, transparent 75%, var(--ds-dark-pattern) 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+} /*[span_23](start_span)[span_23](end_span) */
+
+.header {
+  background: rgba(5, 8, 7, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 2px solid var(--ds-green);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 25px rgba(16, 185, 129, 0.25);
+} /*[span_24](start_span)[span_24](end_span) */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 10px var(--ds-green-glow);
+} /*[span_25](start_span)[span_25](end_span) */
+
+.logo svg {
+  width: 36px;
+  height: 36px;
+  filter: drop-shadow(0 0 8px var(--ds-green));
+} /*[span_26](start_span)[span_26](end_span) */
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+} /*[span_27](start_span)[span_27](end_span) */
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.88rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+} /*[span_28](start_span)[span_28](end_span) */
+
+.youtube-btn { background: #dc2626; color: white; } /*[span_29](start_span)[span_29](end_span) */
+.github-btn { background: #111827; color: white; border: 1px solid rgba(255, 255, 255, 0.2); } /*[span_30](start_span)[span_30](end_span) */
+.instagram-btn { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: white; } /*[span_31](start_span)[span_31](end_span) */
+.social-btn svg { width: 18px; height: 18px; } /*[span_32](start_span)[span_32](end_span) */
+
+.container {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 32px 20px;
+} /*[span_33](start_span)[span_33](end_span) */
+
+h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 10px 0;
+  text-align: center;
+  background: linear-gradient(135deg, #ffffff 0%, var(--ds-green-bright) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px var(--ds-green-glow);
+} /*[span_34](start_span)[span_34](end_span) */
+
+.subtitle {
+  text-align: center;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+  font-size: 1.05rem;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+} /*[span_35](start_span)[span_35](end_span) */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 36px;
+  background: rgba(18, 24, 22, 0.8);
+  padding: 16px;
+  border-radius: 999px;
+  border: 1px solid var(--ds-border);
+  box-shadow: var(--card-shadow);
+} /*[span_36](start_span)[span_36](end_span) */
+
+button, input, select {
+  padding: 12px 20px;
+  border-radius: 999px;
+  border: 1px solid var(--ds-border);
+  background: var(--ds-black);
+  color: var(--text-main);
+  font-weight: 600;
+  font-size: 0.92rem;
+  outline: none;
+  cursor: pointer;
+} /*[span_37](start_span)[span_37](end_span) */
+
+select option { background: var(--bg-card); color: var(--text-main); } /*[span_38](start_span)[span_38](end_span) */
+
+#setAlarm { background: var(--ds-green); color: var(--ds-black); border: none; font-weight: 800; } /*[span_39](start_span)[span_39](end_span) */
+
+#clocks { display: flex; flex-direction: column; gap: 16px; } /*[span_40](start_span)[span_40](end_span) */
+
+.clock {
+  padding: 20px 24px;
+  border-radius: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--ds-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  box-shadow: var(--card-shadow);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /*[span_41](start_span)[span_41](end_span) */
+}
+
+.clock::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: var(--ds-green);
+  box-shadow: 0 0 12px var(--ds-green);
+} /*[span_42](start_span)[span_42](end_span) */
+
+.clock:hover {
+  transform: translateY(-3px); /*[span_43](start_span)[span_43](end_span) */
+  border-color: var(--ds-green-bright); /*[span_44](start_span)[span_44](end_span) */
+  box-shadow: 0 12px 35px rgba(16, 185, 129, 0.3); /*[span_45](start_span)[span_45](end_span) */
+}
+
+.clock h3 { flex-basis: 100%; margin: 0 0 4px 0; font-size: 1.2rem; color: var(--text-main); font-weight: 700; } /*[span_46](start_span)[span_46](end_span) */
+.time { font-size: 1.75rem; font-weight: 800; color: var(--ds-green-bright); text-shadow: 0 0 14px var(--ds-green-glow); font-variant-numeric: tabular-nums; } /*[span_47](start_span)[span_47](end_span) */
+.date { font-size: 0.9rem; color: var(--text-dim); } /*[span_48](start_span)[span_48](end_span) */
+
+.copyBtn {
+  padding: 9px 18px;
+  font-size: 0.88rem;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid var(--ds-border);
+  color: var(--ds-green-bright);
+  border-radius: 999px;
+  cursor: pointer;
+} /*[span_49](start_span)[span_49](end_span) */
+
+.seo-content {
+  background: var(--bg-card);
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 24px;
+  border: 1px solid var(--ds-border);
+} /*[span_50](start_span)[span_50](end_span) */
+
+.seo-content h2 { color: var(--ds-green-bright); margin-top: 0; font-size: 1.35rem; } /*[span_51](start_span)[span_51](end_span) */
+.seo-content h3 { margin-top: 20px; color: var(--text-main); } /*[span_52](start_span)[span_52](end_span) */
+.seo-content p, .seo-content li { color: #d1d5db; } /*[span_53](start_span)[span_53](end_span) */
+
+.nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 24px 0 36px; } /*[span_54](start_span)[span_54](end_span) */
+.nav-links a {
+  background: var(--bg-card);
+  padding: 10px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text-main);
+  font-weight: 600;
+  border: 1px solid var(--ds-border);
+  font-size: 0.9rem;
+} /*[span_55](start_span)[span_55](end_span) */
+
+.city-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; } /*[span_56](start_span)[span_56](end_span) */
+.city-list span {
+  background: rgba(16, 185, 129, 0.08);
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  border: 1px solid var(--ds-border);
+} /*[span_57](start_span)[span_57](end_span) */
+
+.responsive-img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--ds-border);
+  margin: 16px 0;
+}
+
+.footer {
+  margin-top: 60px;
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--text-dim);
+  border-top: 1px solid var(--ds-border);
+} /*[span_58](start_span)[span_58](end_span) */
+.footer a { color: var(--ds-green-bright); text-decoration: none; } /*[span_59](start_span)[span_59](end_span) */
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">
+    <svg viewBox="0 0 100 100" fill="none">
+      <circle cx="50" cy="50" r="42" stroke="#10b981" stroke-width="6"/>
+      <circle cx="50" cy="50" r="5" fill="#34d399"/>
+      <line x1="50" y1="50" x2="50" y2="22" stroke="#34d399" stroke-width="5" stroke-linecap="round"/>
+      <line x1="50" y1="50" x2="72" y2="50" stroke="#10b981" stroke-width="4" stroke-linecap="round"/>
+    </svg> <!--[span_60](start_span)[span_60](end_span) -->
+    <span>World Clock Live</span>
+  </div>
+
+  <!-- 11. External Links -->
+  <div class="header-right">
+    <a href="https://youtube.com/@leaksoff8" target="_blank" rel="noopener" class="social-btn youtube-btn">YouTube</a> <!--[span_61](start_span)[span_61](end_span) -->
+    <a href="https://github.com/pakistanid574-debug" target="_blank" rel="noopener" class="social-btn github-btn">GitHub</a> <!--[span_62](start_span)[span_62](end_span) -->
+    <a href="https://www.instagram.com/leaksff8/" target="_blank" rel="noopener" class="social-btn instagram-btn">Instagram</a> <!--[span_63](start_span)[span_63](end_span) -->
+  </div>
+</header>
+
+<div class="container">
+  <!-- 2. Main Title (H1) -->
+  <h1>Live World Clock – USA, UK, Canada, Pakistan & India</h1> <!--[span_64](start_span)[span_64](end_span) -->
+  
+  <p class="subtitle">
+    Check live current time in 30+ cities across the world, including Florida (USA), Manchester (UK), Toronto (Canada), Karachi (Pakistan), and Mumbai (India).
+  </p>
+
+  <!-- 10. Internal Links -->
+  <nav class="nav-links">
+    <a href="#clocks-section">Live Clocks</a> <!--[span_65](start_span)[span_65](end_span) -->
+    <a href="blogs.html">Blog & Time Guides</a> <!--[span_66](start_span)[span_66](end_span) -->
+    <a href="#time-converter">Time Converter</a>
+    <a href="#faq">FAQ</a> <!--[span_67](start_span)[span_67](end_span) -->
+  </nav>
+
+  <div class="controls">
+    <select id="alarmCity"></select> <!--[span_68](start_span)[span_68](end_span) -->
+    <input type="time" id="alarmTime"> <!--[span_69](start_span)[span_69](end_span) -->
+    <button id="setAlarm">🔔 Add Alarm</button> <!--[span_70](start_span)[span_70](end_span) -->
+  </div>
+
+  <section id="clocks-section">
+    <h2 style="text-align:center; margin-bottom:20px; color:var(--ds-green-bright);">Live World Time in 30+ Cities</h2> <!--[span_71](start_span)[span_71](end_span) -->
+    <div id="clocks"></div> <!--[span_72](start_span)[span_72](end_span) -->
+  </section>
+
+  <!-- 4. Optimized Content & 8, 9. Image with Alt Text -->
+  <section class="seo-content" id="time-converter" style="margin-top: 40px;">
+    <h2>Current Local Time Across Key Global Regions</h2>
+    <p>Monitor live current time effortlessly. Easily keep track of meeting times between <strong>Florida (EST)</strong> and <strong>Manchester (GMT/BST)</strong>, or manage time differences between <strong>Karachi (PKT)</strong> and <strong>Mumbai (IST)</strong>.</p>
+    
+    <!-- 8. Images & 9. Image Alt Text -->
+    <img src="https://via.placeholder.com/800x250/121816/34d399?text=Global+Time+Zones+Map+USA+UK+PK+IN" alt="Live World Clock Time Zones Map USA UK Canada Pakistan India" class="responsive-img">
+
+    <h3>Key Regional Time Comparisons:</h3>
+    <ul>
+      <li><strong>Florida, USA (EST) to Manchester, UK (GMT/BST):</strong> Manchester is 5 hours ahead of Florida.</li>
+      <li><strong>Manchester, UK to Karachi, Pakistan (PKT):</strong> Karachi is 4 to 5 hours ahead of the UK depending on BST.</li>
+      <li><strong>Karachi (Pakistan) to Mumbai (India):</strong> India is 30 minutes ahead of Pakistan.</li>
+      <li><strong>Toronto, Canada to Florida, USA:</strong> Both fall within the Eastern Time Zone (EST/EDT).</li>
+    </ul>
+    
+    <!-- 11. External Links (Authority) -->
+    <p>Check daylight saving updates directly at <a href="https://www.timeanddate.com/" target="_blank" rel="noopener">TimeAndDate</a> benchmark.</p>
+  </section>
+
+  <section class="seo-content" id="features">
+    <h2>Targeted Regions & Cities Covered</h2>
+    <div class="city-list">
+      <span>🇺🇸 Florida (USA)</span>
+      <span>🇬🇧 Manchester (UK)</span>
+      <span>🇨🇦 Toronto (Canada)</span>
+      <span>🇵🇰 Karachi (Pakistan)</span>
+      <span>🇮🇳 Mumbai (India)</span>
+      <span>New York</span> <!--[span_73](start_span)[span_73](end_span) -->
+      <span>London</span> <!--[span_74](start_span)[span_74](end_span) -->
+      <span>Dubai</span> <!--[span_75](start_span)[span_75](end_span) -->
+      <span>Riyadh</span> <!--[span_76](start_span)[span_76](end_span) -->
+      <span>Tokyo</span> <!--[span_77](start_span)[span_77](end_span) -->
+      <span>Sydney</span> <!--[span_78](start_span)[span_78](end_span) -->
+    </div>
+  </section>
+
+  <section class="seo-content" id="faq">
+    <h2>Frequently Asked Questions (FAQ)</h2> <!--[span_79](start_span)[span_79](end_span) -->
+    <h3>What is the time difference between Pakistan and India?</h3>
+    <p>India (IST - UTC+5:30) is 30 minutes ahead of Pakistan (PKT - UTC+5:00).</p>
+    
+    <h3>What time zone is Manchester, UK?</h3>
+    <p>Manchester uses GMT (UTC+0) in winter and BST (UTC+1) during summer daylight savings.</p>
+
+    <h3>What time zone is Florida, USA?</h3>
+    <p>Florida predominantly falls under Eastern Standard Time (EST - UTC-5 / EDT - UTC-4).</p>
+  </section>
+
+  <footer class="footer">
+    <p>© 2026 World Clock by <strong>Hassan Alvi</strong> | Free Online World Time Zones Tool</p> <!--[span_80](start_span)[span_80](end_span) -->
+  </footer>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  // COMPLETE ORIGINAL 29+ CITIES LIST (Target locations placed at top for priority)
+  const zones = [
+    {c:"Florida, USA 🇺🇸", z:"America/New_York"},
+    {c:"Manchester, UK 🇬🇧", z:"Europe/London"},
+    {c:"Toronto, Canada 🇨🇦", z:"America/Toronto"},
+    {c:"Karachi, Pakistan 🇵🇰", z:"Asia/Karachi"}, <!--[span_81](start_span)[span_81](end_span) -->
+    {c:"Mumbai, India 🇮🇳", z:"Asia/Kolkata"}, <!--[span_82](start_span)[span_82](end_span) -->
+    {c:"New York 🇺🇸", z:"America/New_York"}, <!--[span_83](start_span)[span_83](end_span) -->
+    {c:"London 🇬🇧", z:"Europe/London"}, <!--[span_84](start_span)[span_84](end_span) -->
+    {c:"Riyadh 🇸🇦", z:"Asia/Riyadh"}, <!--[span_85](start_span)[span_85](end_span) -->
+    {c:"Dubai 🇦🇪", z:"Asia/Dubai"}, <!--[span_86](start_span)[span_86](end_span) -->
+    {c:"Manama 🇧🇭", z:"Asia/Bahrain"}, <!--[span_87](start_span)[span_87](end_span) -->
+    {c:"Tehran 🇮🇷", z:"Asia/Tehran"}, <!--[span_88](start_span)[span_88](end_span) -->
+    {c:"Zurich 🇨🇭", z:"Europe/Zurich"}, <!--[span_89](start_span)[span_89](end_span) -->
+    {c:"Seoul 🇰🇷", z:"Asia/Seoul"}, <!--[span_90](start_span)[span_90](end_span) -->
+    {c:"Jakarta 🇮🇩", z:"Asia/Jakarta"}, <!--[span_91](start_span)[span_91](end_span) -->
+    {c:"Tokyo 🇯🇵", z:"Asia/Tokyo"}, <!--[span_92](start_span)[span_92](end_span) -->
+    {c:"Bangkok 🇹🇭", z:"Asia/Bangkok"}, <!--[span_93](start_span)[span_93](end_span) -->
+    {c:"Shanghai 🇨🇳", z:"Asia/Shanghai"}, <!--[span_94](start_span)[span_94](end_span) -->
+    {c:"Kenya 🇰🇪", z:"Africa/Nairobi"}, <!--[span_95](start_span)[span_95](end_span) -->
+    {c:"Bishkek 🇰🇬", z:"Asia/Bishkek"}, <!--[span_96](start_span)[span_96](end_span) -->
+    {c:"Bogota 🇨🇴", z:"America/Bogota"}, <!--[span_97](start_span)[span_97](end_span) -->
+    {c:"Los Angeles 🇺🇸", z:"America/Los_Angeles"}, <!--[span_98](start_span)[span_98](end_span) -->
+    {c:"Dhaka 🇧🇩", z:"Asia/Dhaka"}, <!--[span_99](start_span)[span_99](end_span) -->
+    {c:"Manila 🇵🇭", z:"Asia/Manila"}, <!--[span_100](start_span)[span_100](end_span) -->
+    {c:"Baku 🇦🇿", z:"Asia/Baku"}, <!--[span_101](start_span)[span_101](end_span) -->
+    {c:"Doha 🇶🇦", z:"Asia/Qatar"}, <!--[span_102](start_span)[span_102](end_span) -->
+    {c:"Kabul 🇦🇫", z:"Asia/Kabul"}, <!--[span_103](start_span)[span_103](end_span) -->
+    {c:"Algiers 🇩🇿", z:"Africa/Algiers"}, <!--[span_104](start_span)[span_104](end_span) -->
+    {c:"Buenos Aires 🇦🇷", z:"America/Buenos_Aires"}, <!--[span_105](start_span)[span_105](end_span) -->
+    {c:"Dublin 🇮🇪", z:"Europe/Dublin"}, <!--[span_106](start_span)[span_106](end_span) -->
+    {c:"Sydney 🇦🇺", z:"Australia/Sydney"}, <!--[span_107](start_span)[span_107](end_span) -->
+    {c:"Istanbul 🇹🇷", z:"Asia/Istanbul"}, <!--[span_108](start_span)[span_108](end_span) -->
+    {c:"Copenhagen 🇩🇰", z:"Europe/Copenhagen"} <!--[span_109](start_span)[span_109](end_span) -->
+  ];
+
+  const wrap = document.getElementById("clocks");
+  const alarmCity = document.getElementById("alarmCity");
+  const alarmTime = document.getElementById("alarmTime");
+
+  zones.forEach(z => {
+    const opt = document.createElement("option");
+    opt.value = z.z;
+    opt.textContent = z.c;
+    alarmCity.appendChild(opt);
+
+    const d = document.createElement("div");
+    d.className = "clock";
+    d.setAttribute("data-zone", z.z);
+    d.innerHTML = `
+      <h3>${z.c}</h3>
+      <div class="date">--</div>
+      <div class="time">--</div>
+      <button class="copyBtn">📋 Copy</button>
+    `; <!--[span_110](start_span)[span_110](end_span) -->
+    wrap.appendChild(d);
+
+    d.querySelector(".copyBtn").onclick = () => {
+      const now = new Date();
+      const t = now.toLocaleTimeString("en-US", {
+        timeZone: z.z,
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true
+      });
+      navigator.clipboard.writeText(t);
+      alert(`Copied time for ${z.c}: ${t}`);
+    }; <!--[span_111](start_span)[span_111](end_span) -->
+  });
+
+  document.getElementById("setAlarm").onclick = () => {
+    if (!alarmTime.value) {
+      alert("Select time");
+      return;
+    } <!--[span_112](start_span)[span_112](end_span) -->
+    let alarm = { zone: alarmCity.value, time: alarmTime.value, fired: false };
+    localStorage.setItem("alarm", JSON.stringify(alarm));
+    alert("Alarm set ✔");
+  }; <!--[span_113](start_span)[span_113](end_span) -->
+
+  function updateClocks() {
+    const now = new Date();
+
+    document.querySelectorAll(".clock").forEach(c => {
+      const zone = c.getAttribute("data-zone");
+      try {
+        const timeStr = now.toLocaleTimeString("en-US", {
+          timeZone: zone,
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: true
+        }); <!--[span_114](start_span)[span_114](end_span) -->
+
+        const dateStr = now.toLocaleDateString("en-US", {
+          timeZone: zone,
+          weekday: "long",
+          day: "numeric",
+          month: "short"
+        }); <!--[span_115](start_span)[span_115](end_span) -->
+
+        const timeEl = c.querySelector(".time");
+        const dateEl = c.querySelector(".date");
+
+        if (timeEl && timeEl.textContent !== timeStr) timeEl.textContent = timeStr;
+        if (dateEl && dateEl.textContent !== dateStr) dateEl.textContent = dateStr;
+      } catch (e) {
+        console.error(e);
+      }
+    }); <!--[span_116](start_span)[span_116](end_span) -->
+
+    setTimeout(updateClocks, 1000);
+  }
+
+  updateClocks();
+});
+</script>
+</body>
+</html>
