@@ -204,31 +204,31 @@ h1 {
 
   <section id="blogs-section">
     <article class="blog-card">
-      <h3><a href="/blog/how-time-zones-work">1. How Time Zones Work: A Complete Guide to World Time Difference</a></h3>
+      <h3><a href="#">How Time Zones Work: A Complete Guide to World Time Difference</a></h3>
       <div class="blog-meta">Published by Hassan Alvi | Category: Time Zones</div>
       <p>Have you ever wondered why Dubai is 1 hour behind Karachi, or why London is 5 hours behind Pakistan? Time zones are created based on the Earth's rotation around the Sun. The planet is divided into 24 time zones, each representing one hour of the day. Coordinated Universal Time (UTC) serves as the primary time standard by which the world regulates clocks and time.</p>
     </article>
 
     <article class="blog-card">
-      <h3><a href="/blog/karachi-dubai-new-york-time-difference">2. Karachi to Dubai & New York Time Difference Explained</a></h3>
+      <h3><a href="#">Karachi to Dubai & New York Time Difference Explained</a></h3>
       <div class="blog-meta">Published by Hassan Alvi | Category: Guides</div>
       <p>Managing international client calls or flying across continents requires knowing precise local times. Pakistan Standard Time (PKT) is UTC+5, whereas Gulf Standard Time (GST) in Dubai is UTC+4. New York follows Eastern Time (EST/EDT), making it 9 to 10 hours behind Pakistan depending on Daylight Saving Time (DST). Using a live world clock ensures seamless cross-border communication.</p>
     </article>
 
     <article class="blog-card">
-      <h3><a href="/blog/what-is-daylight-saving-time">3. What is Daylight Saving Time (DST) and Which Countries Use It?</a></h3>
+      <h3><a href="#">What is Daylight Saving Time (DST) and Which Countries Use It?</a></h3>
       <div class="blog-meta">Published by Hassan Alvi | Category: Global Time Standards</div>
       <p>Daylight Saving Time (DST) is the practice of advancing clocks during warmer months so that darkness falls at a later clock hour. Countries in North America and Europe actively switch to DST, resulting in seasonal time changes twice a year. Understanding DST helps remote workers and global businesses avoid missing important meetings.</p>
     </article>
 
     <article class="blog-card">
-      <h3><a href="/blog/tips-for-managing-remote-teams-across-time-zones">4. Tips for Managing Remote Teams Across Multiple Time Zones</a></h3>
+      <h3><a href="#">Tips for Managing Remote Teams Across Multiple Time Zones</a></h3>
       <div class="blog-meta">Published by Hassan Alvi | Category: Productivity</div>
       <p>Working in a distributed global team can be challenging when team members span from Tokyo (UTC+9) to Los Angeles (UTC-7). Overlapping working hours, clear communication channels, and keeping track of live city times using online world clock tools are key strategies to boost cross-cultural team productivity.</p>
     </article>
 
     <article class="blog-card">
-      <h3><a href="/blog/happy-new-year-images-and-global-time-zones">5. Happy New Year Images & How Different Time Zones Celebrate First</a></h3>
+      <h3><a href="#">Happy New Year Images & How Different Time Zones Celebrate First</a></h3>
       <div class="blog-meta">Published by Hassan Alvi | Category: Celebrations & Media</div>
       <p>Ring in the New Year with high-quality celebration images, wallpapers, and countdown graphics! Because of global time zones, Kiribati and New Zealand celebrate the New Year hours before London or New York. Explore HD Happy New Year images while tracking when midnight strikes across different cities around the world.</p>
     </article>
@@ -238,6 +238,39 @@ h1 {
     <p>© 2026 World Clock by <strong>Hassan Alvi</strong> | Free Online World Time Zones Tool</p>
   </footer>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  // Page parameter read karein (default Page 1)
+  const urlParams = new URLSearchParams(window.location.search);
+  const currentPage = parseInt(urlParams.get('page')) || 1;
+  const itemsPerPage = 5; // Har page par jitne blogs hain
+
+  const blogCards = document.querySelectorAll('.blog-card');
+
+  blogCards.forEach((card, index) => {
+    const linkElement = card.querySelector('h3 a');
+    const originalTitle = linkElement.textContent.trim();
+
+    // 1. Unique Slug Generator Function
+    const slug = originalTitle
+      .toLowerCase()
+      .replace(/[^a-z0-0\s-]/g, '') // Special characters remove karein
+      .trim()
+      .replace(/\s+/g, '-');         // Spaces ko hyphen '-' mein badlein
+
+    // Custom Slug URL Set Karein
+    linkElement.setAttribute('href', `/blog/${slug}.html`);
+
+    // 2. Dynamic Continuous Numbering (Page Number ke hisab se)
+    // Formula: ((Current Page - 1) * Items Per Page) + Current Index + 1
+    const globalNumber = ((currentPage - 1) * itemsPerPage) + (index + 1);
+
+    // Title ke shuru mein number add karein
+    linkElement.textContent = `${globalNumber}. ${originalTitle}`;
+  });
+});
+</script>
 
 </body>
 </html>
