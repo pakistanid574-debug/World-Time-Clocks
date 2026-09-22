@@ -1,48 +1,53 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="nb-NO">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="mqs9JNllYYrmpEj7YBh1NQzu8LO6x6gPJGXv8rbt-EQ" />
 
-<!-- 1. Optimized Meta Title for US Search -->
-<title>United States World Clock - Live US Time Zones (EST, CST, MST, PST) & Local Time</title>
-
-<!-- 2. Meta Description -->
-<meta name="description" content="Accurate live time for United States time zones including Eastern (EST), Central (CST), Mountain (MST), and Pacific (PST). Track local time across US states & major global cities.">
-
-<!-- 3. Keywords -->
-<meta name="keywords" content="united states world clock, us time zones, current us time, eastern standard time, pacific time zone, central time zone, live local time usa, real time clock online">
-
-<!-- 4. Canonical URL -->
-<link rel="canonical" href="https://world-time-clocks.vercel.app/">
-<link rel="manifest" href="manifest.json">
-
-<!-- 5. Open Graph Meta Tags -->
-<meta property="og:title" content="United States World Clock - Live US Time Zones & Local Time">
-<meta property="og:description" content="Check exact live time across United States time zones (New York, Los Angeles, Chicago, Florida) and international cities.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://world-time-clocks.vercel.app/">
-<meta property="og:image" content="https://via.placeholder.com/1200x630/150b1e/ff6600?text=United+States+World+Clock+Live">
-
-<!-- Halloween Theme Color -->
-<meta name="theme-color" content="#ff6600">
+<!-- Title & Description (Norwegian Language Only) -->
+<title>Norge Verdensklokke - Se Hva Klokken Er i Norge Nå (CET/CEST)</title>
+<meta name="title" content="Norge Verdensklokke - Se Hva Klokken Er i Norge Nå (CET/CEST)">
+<meta name="description" content="Nøyaktig norsk tidssone og live klokke for Oslo, Bergen, Trondheim og Stavanger. Sjekk hva klokken er i Norge akkurat nå.">
+<meta name="keywords" content="hva er klokka i norge, hva er klokka oslo, norsk tid nå, verdensklokke norge, cet tid oslo, tidssone norge">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="language" content="Norwegian">
 <meta name="author" content="Max">
 
-<!-- Geo Location Targeting US -->
-<meta name="geo.region" content="US" />
-<meta name="geo.placename" content="United States" />
+<!-- Strictly Norway Geo & Language Targeting -->
+<link rel="canonical" href="https://world-time-clocks.vercel.app/">
+<link rel="alternate" hreflang="no-NO" href="https://world-time-clocks.vercel.app/" />
+<link rel="alternate" hreflang="nb-NO" href="https://world-time-clocks.vercel.app/" />
 
-<!-- 6. Schema.org JSON-LD Markup for Search Engines -->
+<meta name="geo.region" content="NO" />
+<meta name="geo.placename" content="Norway" />
+<meta name="geo.position" content="59.913868;10.752245" />
+<meta name="ICBM" content="59.913868, 10.752245" />
+
+<!-- Manifest & Theme -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ff6600">
+
+<!-- Open Graph / Social -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://world-time-clocks.vercel.app/">
+<meta property="og:site_name" content="Norge Verdensklokke">
+<meta property="og:title" content="Norge Verdensklokke - Norsk Tid Nå">
+<meta property="og:description" content="Se hvad klokken er i Norge og Oslo akkurat nå. Nøyaktig live tidssone.">
+<meta property="og:locale" content="nb_NO">
+
+<!-- Schema JSON-LD (Targeting Norway Local Audience Only) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "United States World Clock Live",
+  "name": "Norge Verdensklokke",
   "url": "https://world-time-clocks.vercel.app/",
   "applicationCategory": "UtilitiesApplication",
   "operatingSystem": "All",
-  "description": "Live real-time local clock and US time zone converter for United States regions and major global cities."
+  "inLanguage": "nb-NO",
+  "areaServed": "NO",
+  "description": "Norsk sanntidsklokke for brukere i Norge."
 }
 </script>
 
@@ -53,18 +58,10 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What are the main time zones in the United States?",
+      "name": "Hva er klokken i Norge akkurat nå?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The primary contiguous US time zones are Eastern (EST/EDT), Central (CST/CDT), Mountain (MST/MDT), and Pacific (PST/PDT)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How many hours is London ahead of Eastern Standard Time (EST)?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "London (GMT/BST) is generally 5 hours ahead of US Eastern Standard Time (EST/EDT)."
+        "text": "Norge bruker sentraleuropeisk tid (CET, UTC+1) og sommerstid (CEST, UTC+2)."
       }
     }
   ]
@@ -80,13 +77,9 @@
   --text-main: #fff5ea;
   --text-muted: #ffb870;
   --text-dim: #a395b0;
-  
-  /* Halloween Palette */
   --hl-orange: #ff6600;
   --hl-orange-bright: #ff8533;
   --hl-orange-glow: rgba(255, 102, 0, 0.4);
-  --hl-purple: #8b5cf6;
-  --hl-purple-dark: #231238;
   --hl-black: #060209;
   --hl-border: rgba(255, 102, 0, 0.25);
   --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
@@ -98,69 +91,24 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--bg-dark);
-  background-image: 
-    radial-gradient(circle at 50% 0%, rgba(139, 92, 246, 0.15), transparent 70%),
-    radial-gradient(circle at 10% 90%, rgba(255, 102, 0, 0.1), transparent 50%),
-    linear-gradient(180deg, var(--bg-dark) 0%, #12071a 100%);
-  background-attachment: fixed;
   color: var(--text-main);
-  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
   line-height: 1.6;
 }
 
 .header {
   background: rgba(10, 5, 14, 0.94);
-  backdrop-filter: blur(12px);
   border-bottom: 2px solid var(--hl-orange);
   padding: 16px 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 4px 25px var(--hl-orange-glow);
 }
 
 .logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
   font-size: 1.5rem;
   font-weight: 800;
   color: var(--text-main);
-  letter-spacing: 0.5px;
-  text-shadow: 0 0 10px var(--hl-orange-glow);
-}
-
-.logo svg {
-  width: 38px;
-  height: 38px;
-  filter: drop-shadow(0 0 8px var(--hl-orange));
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.social-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 18px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 0.88rem;
-  transition: all 0.3s ease;
-  border: 1px solid var(--hl-border);
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); 
-  color: white;
 }
 
 .container {
@@ -171,405 +119,54 @@ body {
 
 h1 {
   font-size: 2.2rem;
-  font-weight: 800;
-  margin: 10px 0;
   text-align: center;
-  background: linear-gradient(135deg, #ffffff 20%, var(--hl-orange-bright) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 25px var(--hl-orange-glow);
+  color: var(--hl-orange-bright);
 }
-
-.subtitle {
-  text-align: center;
-  color: var(--text-dim);
-  margin-bottom: 32px;
-  font-size: 1.05rem;
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  margin-bottom: 36px;
-  background: rgba(21, 11, 30, 0.85);
-  padding: 16px;
-  border-radius: 999px;
-  border: 1px solid var(--hl-border);
-  box-shadow: var(--card-shadow);
-}
-
-button, input, select {
-  padding: 12px 20px;
-  border-radius: 999px;
-  border: 1px solid var(--hl-border);
-  background: var(--hl-black);
-  color: var(--text-main);
-  font-weight: 600;
-  font-size: 0.92rem;
-  outline: none;
-  cursor: pointer;
-}
-
-select option { background: var(--bg-card); color: var(--text-main); }
-
-#setAlarm { 
-  background: var(--hl-orange); 
-  color: #000; 
-  border: none; 
-  font-weight: 800;
-  box-shadow: 0 0 15px var(--hl-orange-glow);
-}
-
-#setAlarm:hover { background: var(--hl-orange-bright); }
-
-#clocks { display: flex; flex-direction: column; gap: 16px; }
 
 .clock {
-  padding: 20px 24px;
+  padding: 20px;
   border-radius: 20px;
   background: var(--bg-card);
   border: 1px solid var(--hl-border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  box-shadow: var(--card-shadow);
-  position: relative;
-  transition: all 0.3s ease;
+  margin-bottom: 16px;
 }
 
-.clock::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 5px;
-  background: var(--hl-orange);
-  box-shadow: 0 0 12px var(--hl-orange);
-  border-radius: 20px 0 0 20px;
-}
-
-.clock:hover {
-  transform: translateY(-3px);
-  border-color: var(--hl-orange);
-  box-shadow: 0 12px 35px var(--hl-orange-glow);
-}
-
-.clock h3 { flex-basis: 100%; margin: 0 0 4px 0; font-size: 1.25rem; color: var(--text-main); font-weight: 700; }
-.time { font-size: 1.8rem; font-weight: 800; color: var(--hl-orange-bright); text-shadow: 0 0 14px var(--hl-orange-glow); font-variant-numeric: tabular-nums; }
-.date { font-size: 0.9rem; color: var(--text-dim); }
-
-.copyBtn {
-  padding: 9px 18px;
-  font-size: 0.88rem;
-  background: rgba(255, 102, 0, 0.12);
-  border: 1px solid var(--hl-border);
-  color: var(--hl-orange-bright);
-  border-radius: 999px;
-  cursor: pointer;
-}
-
-.copyBtn:hover { background: var(--hl-orange); color: #000; }
-
-.seo-content {
-  background: var(--bg-card);
-  border-radius: 20px;
-  padding: 28px;
-  margin-bottom: 24px;
-  border: 1px solid var(--hl-border);
-}
-
-.seo-content h2 { color: var(--hl-orange-bright); margin-top: 0; font-size: 1.4rem; }
-.seo-content h3 { margin-top: 20px; color: var(--text-main); }
-.seo-content p, .seo-content li { color: #d1c7d9; }
-
-.nav-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin: 24px 0 36px; }
-.nav-links a {
-  background: var(--bg-card);
-  padding: 10px 20px;
-  border-radius: 999px;
-  text-decoration: none;
-  color: var(--text-main);
-  font-weight: 600;
-  border: 1px solid var(--hl-border);
-  font-size: 0.9rem;
-}
-.nav-links a:hover { border-color: var(--hl-orange); }
-
-.city-list { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-.city-list span {
-  background: rgba(255, 102, 0, 0.08);
-  color: var(--text-muted);
-  padding: 8px 16px;
-  border-radius: 999px;
-  font-size: 0.88rem;
-  border: 1px solid var(--hl-border);
-}
-
-.responsive-img {
-  width: 100%;
-  max-width: 800px;
-  height: auto;
-  border-radius: 12px;
-  border: 1px solid var(--hl-border);
-  margin: 16px 0;
-}
-
-.footer {
-  margin-top: 60px;
-  padding: 32px 16px;
-  text-align: center;
-  color: var(--text-dim);
-  border-top: 1px solid var(--hl-border);
-}
-.footer a { color: var(--hl-orange-bright); text-decoration: none; }
+.time { font-size: 2rem; font-weight: 800; color: var(--hl-orange); }
 </style>
 </head>
 <body>
 
 <header class="header">
-  <div class="logo">
-    <svg viewBox="0 0 100 100" fill="none">
-      <circle cx="50" cy="50" r="42" stroke="#ff6600" stroke-width="6"/>
-      <path d="M42 35 L48 45 L36 45 Z" fill="#ff6600"/>
-      <path d="M58 35 L64 45 L52 45 Z" fill="#ff6600"/>
-      <path d="M35 65 Q50 78 65 65 Q50 70 35 65 Z" fill="#ff6600"/>
-      <circle cx="50" cy="50" r="4" fill="#ff8533"/>
-      <line x1="50" y1="50" x2="50" y2="24" stroke="#ff8533" stroke-width="4" stroke-linecap="round"/>
-      <line x1="50" y1="50" x2="68" y2="50" stroke="#ff6600" stroke-width="4" stroke-linecap="round"/>
-    </svg>
-    <span>United States World Clock 🎃</span>
-  </div>
-
-  <div class="header-right">
-    <a href="https://www.instagram.com/leaksff8/" target="_blank" rel="noopener" class="social-btn">Instagram</a>
-  </div>
+  <div class="logo">Norge Verdensklokke 🇳🇴</div>
 </header>
 
 <div class="container">
-  <h1>United States World Clock – Live Local Time in USA Time Zones</h1>
-  
-  <p class="subtitle">
-    Check real-time accurate local time across major United States time zones (Eastern EST, Central CST, Mountain MST, Pacific PST) and global cities.
-  </p>
+  <h1>Hva er klokken i Norge?</h1>
 
-  <nav class="nav-links">
-    <a href="#clocks-section">Live Clocks</a>
-    <a href="#time-converter">US Time Differences</a>
-    <a href="#guide-article">Time Zone Guide</a>
-    <a href="#faq">FAQ</a>
-  </nav>
-
-  <div class="controls">
-    <select id="alarmCity"></select>
-    <input type="time" id="alarmTime">
-    <button id="setAlarm">🎃 Add Spooky Alarm</button>
+  <div class="clock">
+    <h3>Oslo, Norge (CET/CEST)</h3>
+    <div id="norwayTime" class="time">--:--:--</div>
   </div>
 
-  <section id="clocks-section">
-    <h2 style="text-align:center; margin-bottom:20px; color:var(--hl-orange-bright);">Real-Time Clocks in United States & Global Cities</h2>
-    <div id="clocks"></div>
+  <section class="seo-content">
+    <h2>Norsk Tidssone</h2>
+    <p>Denne tjenesten viser eksakt tid i Norge og Oslo i sanntid.</p>
   </section>
-
-  <section class="seo-content" id="time-converter" style="margin-top: 40px;">
-    <h2>Current Local Time Across United States Time Zones</h2>
-    <p>Track live local time across key US states and global financial hubs. Easily convert time differences between <strong>Eastern Time (EST/EDT)</strong>, <strong>Central Time (CST/CDT)</strong>, <strong>Mountain Time (MST/MDT)</strong>, and <strong>Pacific Time (PST/PDT)</strong>.</p>
-    
-    <img src="https://via.placeholder.com/800x250/150b1e/ff6600?text=United+States+Time+Zones+Map+(EST,+CST,+MST,+PST)" alt="United States Time Zones Map Eastern Central Mountain Pacific" class="responsive-img">
-
-    <h3>Key US Regional Time Comparisons:</h3>
-    <ul>
-      <li><strong>New York / Florida (EST) to Los Angeles, CA (PST):</strong> Pacific Time is 3 hours behind Eastern Time.</li>
-      <li><strong>Chicago, IL (CST) to New York (EST):</strong> Central Time is 1 hour behind Eastern Time.</li>
-      <li><strong>United States (EST) to London, UK (GMT/BST):</strong> London is 5 hours ahead of Eastern Standard Time.</li>
-      <li><strong>United States (EST) to Tokyo, Japan (JST):</strong> Tokyo is 13 to 14 hours ahead of Eastern Standard Time.</li>
-    </ul>
-    
-    <p>Verify official time standards and Daylight Saving Time updates on <a href="https://www.timeanddate.com/" target="_blank" rel="noopener">TimeAndDate</a>.</p>
-  </section>
-
-  <section class="seo-content" id="guide-article">
-    <h2>Complete Guide to United States Time Zones & Daylight Saving</h2>
-    <p>Understanding the structure of United States time zones is essential for scheduling meetings, managing remote teams, and coordinating international travel. The continental United States spans four primary standard time zones, with additional zones covering Alaska, Hawaii, and US territories.</p>
-
-    <h3>1. Eastern Standard Time (EST / EDT)</h3>
-    <p>Eastern Standard Time covers the East Coast of the US, including major financial centers like New York, Miami, Atlanta, and Washington, D.C. It operates at UTC-5 during standard time and shifts to UTC-4 during Daylight Saving Time (EDT).</p>
-
-    <h3>2. Central Standard Time (CST / CDT)</h3>
-    <p>Central Standard Time is 1 hour behind Eastern Time (UTC-6 standard, UTC-5 DST). Key cities in this zone include Chicago, Houston, Dallas, and Minneapolis.</p>
-
-    <h3>3. Mountain Standard Time (MST / MDT)</h3>
-    <p>Mountain Standard Time is 2 hours behind Eastern Time (UTC-7 standard, UTC-6 DST). It covers states such as Colorado, Utah, and Montana. Note that Arizona operates on MST year-round without observing Daylight Saving Time (except for the Navajo Nation).</p>
-
-    <h3>4. Pacific Standard Time (PST / PDT)</h3>
-    <p>Pacific Standard Time covers the US West Coast, including Los Angeles, San Francisco, Seattle, and Las Vegas. It runs at UTC-8 during standard time and UTC-7 during Daylight Saving Time.</p>
-  </section>
-
-  <section class="seo-content" id="features">
-    <h2>Targeted United States Cities & Global Regions</h2>
-    <div class="city-list">
-      <span>🇺🇸 New York, NY (EST)</span>
-      <span>🇺🇸 Los Angeles, CA (PST)</span>
-      <span>🇺🇸 Chicago, IL (CST)</span>
-      <span>🇺🇸 Miami / Florida (EST)</span>
-      <span>🇺🇸 Denver, CO (MST)</span>
-      <span>🇺🇸 Phoenix, AZ (MST)</span>
-      <span>🇬🇧 London, UK</span>
-      <span>🇨🇦 Toronto, Canada</span>
-      <span>🇵🇰 Karachi, Pakistan</span>
-      <span>🇮🇳 Mumbai, India</span>
-      <span>🇦🇪 Dubai, UAE</span>
-      <span>🇯🇵 Tokyo, Japan</span>
-    </div>
-  </section>
-
-  <section class="seo-content" id="faq">
-    <h2>Frequently Asked Questions (FAQ)</h2>
-    <h3>What are the primary time zones in the United States?</h3>
-    <p>The continental United States uses four main time zones: Eastern Time (ET), Central Time (CT), Mountain Time (MT), and Pacific Time (PT).</p>
-    
-    <h3>Is Florida in the Eastern Time Zone?</h3>
-    <p>Most of Florida is in Eastern Standard Time (EST/EDT), while parts of the western panhandle fall under Central Standard Time (CST/CDT).</p>
-
-    <h3>How many time zones are there in the United States?</h3>
-    <p>The US covers 6 standard time zones across states (Eastern, Central, Mountain, Pacific, Alaska, and Hawaii-Aleutian).</p>
-  </section>
-
-  <footer class="footer">
-    <p>© 2026 United States World Clock by <strong>Max</strong> | Free Online USA Time Tool</p>
-  </footer>
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const zones = [
-    {c:"New York, USA 🇺🇸 (EST/EDT)", z:"America/New_York"},
-    {c:"Los Angeles, USA 🇺🇸 (PST/PDT)", z:"America/Los_Angeles"},
-    {c:"Chicago, USA 🇺🇸 (CST/CDT)", z:"America/Chicago"},
-    {c:"Florida, USA 🇺🇸 (EST)", z:"America/New_York"},
-    {c:"Denver, USA 🇺🇸 (MST/MDT)", z:"America/Denver"},
-    {c:"Phoenix, USA 🇺🇸 (MST)", z:"America/Phoenix"},
-    {c:"London, UK 🇬🇧", z:"Europe/London"},
-    {c:"Toronto, Canada 🇨🇦", z:"America/Toronto"},
-    {c:"Karachi, Pakistan 🇵🇰", z:"Asia/Karachi"},
-    {c:"Mumbai, India 🇮🇳", z:"Asia/Kolkata"},
-    {c:"Dubai, UAE 🇦🇪", z:"Asia/Dubai"},
-    {c:"Riyadh, Saudi Arabia 🇸🇦", z:"Asia/Riyadh"},
-    {c:"Tokyo, Japan 🇯🇵", z:"Asia/Tokyo"},
-    {c:"Zurich, Switzerland 🇨🇭", z:"Europe/Zurich"},
-    {c:"Seoul, South Korea 🇰🇷", z:"Asia/Seoul"},
-    {c:"Jakarta, Indonesia 🇮🇩", z:"Asia/Jakarta"},
-    {c:"Bangkok, Thailand 🇹🇭", z:"Asia/Bangkok"},
-    {c:"Shanghai, China 🇨🇳", z:"Asia/Shanghai"},
-    {c:"Nairobi, Kenya 🇰🇪", z:"Africa/Nairobi"},
-    {c:"Bogota, Colombia 🇨🇴", z:"America/Bogota"},
-    {c:"Dhaka, Bangladesh 🇧🇩", z:"Asia/Dhaka"},
-    {c:"Manila, Philippines 🇵🇭", z:"Asia/Manila"},
-    {c:"Doha, Qatar 🇶🇦", z:"Asia/Qatar"},
-    {c:"Kabul, Afghanistan 🇦🇫", z:"Asia/Kabul"},
-    {c:"Buenos Aires, Argentina 🇦🇷", z:"America/Buenos_Aires"},
-    {c:"Dublin, Ireland 🇮🇪", z:"Europe/Dublin"},
-    {c:"Sydney, Australia 🇦🇺", z:"Australia/Sydney"},
-    {c:"Istanbul, Turkey 🇹🇷", z:"Asia/Istanbul"}
-  ];
-
-  const wrap = document.getElementById("clocks");
-  const alarmCity = document.getElementById("alarmCity");
-  const alarmTime = document.getElementById("alarmTime");
-
-  zones.forEach(z => {
-    const opt = document.createElement("option");
-    opt.value = z.z;
-    opt.textContent = z.c;
-    alarmCity.appendChild(opt);
-
-    const d = document.createElement("div");
-    d.className = "clock";
-    d.setAttribute("data-zone", z.z);
-    d.innerHTML = `
-      <h3>${z.c}</h3>
-      <div class="date">--</div>
-      <div class="time">--</div>
-      <button class="copyBtn">📋 Copy</button>
-    `;
-    wrap.appendChild(d);
-
-    d.querySelector(".copyBtn").onclick = () => {
-      const now = new Date();
-      const t = now.toLocaleTimeString("en-US", {
-        timeZone: z.z,
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: true
-      });
-      navigator.clipboard.writeText(t);
-      alert(`Copied time for ${z.c}: ${t}`);
-    };
+function updateNorwayTime() {
+  const now = new Date();
+  const timeStr = now.toLocaleTimeString("no-NO", {
+    timeZone: "Europe/Oslo",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit"
   });
-
-  document.getElementById("setAlarm").onclick = () => {
-    if (!alarmTime.value) {
-      alert("Select time");
-      return;
-    }
-    let alarm = { zone: alarmCity.value, time: alarmTime.value, fired: false };
-    localStorage.setItem("alarm", JSON.stringify(alarm));
-    alert("Spooky Alarm set ✔");
-  };
-
-  function updateClocks() {
-    const now = new Date();
-
-    document.querySelectorAll(".clock").forEach(c => {
-      const zone = c.getAttribute("data-zone");
-      try {
-        const timeStr = now.toLocaleTimeString("en-US", {
-          timeZone: zone,
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          hour12: true
-        });
-
-        const dateStr = now.toLocaleDateString("en-US", {
-          timeZone: zone,
-          weekday: "long",
-          day: "numeric",
-          month: "short"
-        });
-
-        const timeEl = c.querySelector(".time");
-        const dateEl = c.querySelector(".date");
-
-        if (timeEl && timeEl.textContent !== timeStr) timeEl.textContent = timeStr;
-        if (dateEl && dateEl.textContent !== dateStr) dateEl.textContent = dateStr;
-      } catch (e) {
-        console.error(e);
-      }
-    });
-
-    setTimeout(updateClocks, 1000);
-  }
-
-  updateClocks();
-});
-
-// Offline-ready Service Worker Registration
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js')
-      .then((reg) => console.log('Service Worker Registered:', reg.scope))
-      .catch((err) => console.error('Service Worker Registration Failed:', err));
-  });
+  document.getElementById("norwayTime").textContent = timeStr;
+  setTimeout(updateNorwayTime, 1000);
 }
+updateNorwayTime();
 </script>
 </body>
 </html>
