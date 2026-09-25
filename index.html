@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check the current time in Norway, Oslo, Bergen, Trondheim, Stavanger and Tromsø. Explore famous Norway tourist places including Geirangerfjord, Trolltunga, Preikestolen, Lofoten, Bryggen and Flåm.">
+    <meta name="keywords" content="Norway time now, time in Norway, Oslo time, Norway world clock, Norway timezone, Norway tourist places, places to visit in Norway, Geirangerfjord, Trolltunga, Preikestolen, Lofoten Islands, Tromsø, Bergen, Flåm">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="author" content="Norway World Time Clock">
+    <meta name="theme-color" content="#0b0712">
+    <link rel="canonical" href="https://world-time-clocks.vercel.app/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Norway Time Now & Famous Tourist Places">
+    <meta property="og:description" content="Live Norway time, Oslo time, timezone conversion and a guide to famous tourist places in Norway.">
+    <meta property="og:url" content="https://world-time-clocks.vercel.app/">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Norway Time Now & Famous Tourist Places">
+    <meta name="twitter:description" content="Check Norway time now and discover famous places to visit in Norway.">
+
+    <!-- Schema.org LocalBusiness & WebApplication Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Norway World Time Clock",
+      "url": "https://world-time-clocks.vercel.app/",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "description": "Live Norway local time clock and comprehensive international time zone converter.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "World Time Clock - Norsk Tid Oslo",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Karl Johans gate 25",
+          "addressLocality": "Oslo",
+          "postalCode": "0159",
+          "addressCountry": "NO"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "59.913868",
+          "longitude": "10.752245"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #0b0712;
+            --card-bg: #150d22;
+            --card-border: rgba(255, 102, 0, 0.25);
+            --accent-orange: #ff6600;
+            --accent-blue: #0088ff;
+            --text-main: #ffffff;
+            --text-sub: #a89bb8;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px 10px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--accent-orange);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        p.subtitle {
+            color: var(--text-sub);
+            font-size: 1rem;
+        }
+
+        /* Hero Main Clock */
+        .hero-clock {
+            background: linear-gradient(145deg, #1d0f30, #130920);
+            border: 2px solid var(--accent-orange);
+            border-radius: 20px;
+            padding: 30px 20px;
+            width: 100%;
+            max-width: 700px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(255, 102, 0, 0.2);
+        }
+
+        .hero-date {
+            font-size: 1.2rem;
+            color: var(--accent-orange);
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .hero-time {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #ffffff;
+            margin: 15px 0;
+        }
+
+        .hero-tz {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+        }
+
+        /* Section Titles */
+        .section-title {
+            width: 100%;
+            max-width: 900px;
+            font-size: 1.4rem;
+            color: #fff;
+            margin: 20px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--card-border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Grid Layout */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+            width: 100%;
+            max-width: 900px;
+            margin-bottom: 30px;
+        }
+
+        .city-card {
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 20px;
+            border: 1px solid var(--card-border);
+            text-align: center;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .city-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-orange);
+        }
+
+        .city-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .city-time {
+            font-size: 2.1rem;
+            font-weight: 800;
+            color: var(--accent-orange);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .city-tz {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            margin-top: 6px;
+        }
+
+        /* Famous Tourist Places */
+        .tourist-card {
+            background: var(--card-bg);
+            border-radius: 14px;
+            padding: 20px;
+            border: 1px solid var(--card-border);
+            text-align: left;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .tourist-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-orange);
+        }
+
+        .tourist-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .tourist-location {
+            font-size: 0.9rem;
+            color: var(--accent-orange);
+            margin-bottom: 8px;
+        }
+
+        .tourist-description {
+            font-size: 0.9rem;
+            color: var(--text-sub);
+            line-height: 1.5;
+        }
+
+        /* Global Timezone Converter */
+        .converter-section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 25px;
+            width: 100%;
+            max-width: 700px;
+            margin-bottom: 40px;
+            border: 1px solid var(--card-border);
+        }
+
+        .converter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-size: 1rem;
+            color: var(--text-sub);
+        }
+
+        select {
+            background: #0b0712;
+            border: 1px solid var(--accent-orange);
+            color: #fff;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 1rem;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .converted-result {
+            margin-top: 20px;
+            padding: 18px;
+            background: rgba(255, 102, 0, 0.08);
+            border-radius: 12px;
+            text-align: center;
+            font-size: 1.35rem;
+            font-weight: bold;
+            color: #fff;
+            border: 1px dashed var(--accent-orange);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            color: var(--text-sub);
+            font-size: 0.85rem;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            .hero-time { font-size: 3rem; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What time zone is Norway in?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Norway uses Central European Time (CET) in winter and Central European Summer Time (CEST) during daylight saving time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are famous places to visit in Norway?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Popular destinations include Geirangerfjord, Preikestolen, Trolltunga, Lofoten Islands, Tromsø, Bergen, Flåm and Oslo attractions."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Norway known for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Norway is widely known for its fjords, Arctic landscapes, scenic mountains, historic cities and northern lights experiences."
+          }
+        }
+      ]
+    }
+    </script>
+
+</head>
+<body>
+
+    <header>
+        <h1>🇳🇴 Norway Time Now & Famous Tourist Places</h1>
+        <p class="subtitle">Live Norway Time, Oslo Time, Timezone Converter & Norway Travel Guide</p>
+    </header>
+
+    <!-- Main Norway Time Hero -->
+    <div class="hero-clock">
+        <div class="hero-date" id="norwayDate">Laster dato...</div>
+        <div class="hero-time" id="norwayClock">00:00:00</div>
+        <div class="hero-tz">Oslo Main Time Zone • CET / CEST (UTC+1 / UTC+2)</div>
+    </div>
+
+    <!-- Major Cities in Norway -->
+    <h2 class="section-title">🇳🇴 Norway Major Cities & Local Time</h2>
+    <div class="grid-container">
+        <div class="city-card">
+            <div class="city-name">Oslo</div>
+            <div class="city-time" id="osloTime">00:00:00</div>
+            <div class="city-tz">Capital • Central Europe Time</div>
+        </div>
+        <div class="city-card">
+            <div class="city-name">Bergen</div>
+            <div class="city-time" id="bergenTime">00:00:00</div>
+            <div class="city-tz">Vestland • Norway</div>
+        </div>
+        <div class="city-card">
+            <div class="city-name">Trondheim</div>
+            <div class="city-time" id="trondheimTime">00:00:00</div>
+            <div class="city-tz">Trøndelag • Norway</div>
+        </div>
+        <div class="city-card">
+            <div class="city-name">Stavanger</div>
+            <div class="city-time" id="stavangerTime">00:00:00</div>
+            <div class="city-tz">Rogaland • Norway</div>
+        </div>
+        <div class="city-card">
+            <div class="city-name">Drammen</div>
+            <div class="city-time" id="drammenTime">00:00:00</div>
+            <div class="city-tz">Buskerud • Norway</div>
+        </div>
+        <div class="city-card">
+            <div class="city-name">Tromsø</div>
+            <div class="city-time" id="tromsoTime">00:00:00</div>
+            <div class="city-tz">Northern Norway • Arctic</div>
+        </div>
+    </div>
+
+    <!-- Famous Tourist Places in Norway -->
+    <h2 class="section-title">🏔️ Famous Tourist Places in Norway</h2>
+    <div class="grid-container">
+        <div class="tourist-card">
+            <div class="tourist-name">Geirangerfjord</div>
+            <div class="tourist-location">📍 Western Norway</div>
+            <div class="tourist-description">A spectacular fjord famous for dramatic mountains, waterfalls, and scenic views.</div>
+        </div>
+
+        <div class="tourist-card">
+            <div class="tourist-name">Preikestolen (Pulpit Rock)</div>
+            <div class="tourist-location">📍 Near Stavanger</div>
+            <div class="tourist-description">A famous cliff overlooking the Lysefjord, known for its panoramic hiking viewpoint.</div>
+        </div>
+
+        <div class="tourist-card">
+            <div class="tourist-name">Trolltunga</div>
+            <div class="tourist-location">📍 Near Odda</div>
+            <div class="tourist-description">An iconic rock formation extending over the landscape with impressive mountain scenery.</div>
+        </div>
+
+        <div class="tourist-card">
+            <div class="tourist-name">Lofoten Islands</div>
+            <div class="tourist-location">📍 Northern Norway</div>
+            <div class="tourist-description">Known for dramatic peaks, fishing villages, beaches, and Arctic landscapes.</div>
+        </div>
+
+        <div class="tourist-card">
+            <div class="tourist-name">Tromsø</div>
+            <div class="tourist-location">📍 Arctic Norway</div>
+            <div class="tourist-description">A popular Arctic destination for northern lights experiences and winter activities.</div>
+        </div>
+
+        <div class="tourist-card">
+            <div class="tourist-name">Vigeland Sculpture Park</div>
+            <div class="tourist-location">📍 Oslo</div>
+            <div class="tourist-description">A major Oslo attraction featuring a large collection of sculptures by Gustav Vigeland.</div>
+        </div>
+
+        <div class="tourist-card">
+            <div class="tourist-name">Bryggen</div>
+            <div class="tourist-location">📍 Bergen</div>
+            <div class="tourist-description">Historic colorful waterfront buildings that are among Bergen's best-known landmarks.</div>
+        </div>
+
+        <div class="tourist-card">
+            <div class="tourist-name">Flåm</div>
+            <div class="tourist-location">📍 Aurland, Western Norway</div>
+            <div class="tourist-description">A scenic fjord village famous for mountain views and the Flåm Railway journey.</div>
+        </div>
+    </div>
+
+    <!-- Global Timezone Converter -->
+    <h2 class="section-title">🌐 Global Timezone Converter</h2>
+    <div class="converter-section">
+        <div class="converter-group">
+            <label for="targetZone">Velg en internasjonal by / tidssone:</label>
+            <select id="targetZone" onchange="convertTime()">
+                <optgroup label="Europe">
+                    <option value="Europe/London">London (UK - GMT/BST)</option>
+                    <option value="Europe/Paris">Paris (France - CET)</option>
+                    <option value="Europe/Berlin">Berlin (Germany - CET)</option>
+                    <option value="Europe/Stockholm">Stockholm (Sweden - CET)</option>
+                    <option value="Europe/Copenhagen">Copenhagen (Denmark - CET)</option>
+                </optgroup>
+                <optgroup label="Americas">
+                    <option value="America/New_York">New York (USA - Eastern)</option>
+                    <option value="America/Chicago">Chicago (USA - Central)</option>
+                    <option value="America/Los_Angeles">Los Angeles (USA - Pacific)</option>
+                    <option value="America/Toronto">Toronto (Canada - Eastern)</option>
+                </optgroup>
+                <optgroup label="Middle East & Asia">
+                    <option value="Asia/Dubai">Dubai (UAE - GST)</option>
+                    <option value="Asia/Riyadh">Riyadh (Saudi Arabia - AST)</option>
+                    <option value="Asia/Karachi">Karachi (Pakistan - PKT)</option>
+                    <option value="Asia/Tokyo">Tokyo (Japan - JST)</option>
+                    <option value="Asia/Singapore">Singapore (SGT)</option>
+                </optgroup>
+                <optgroup label="Oceania">
+                    <option value="Australia/Sydney">Sydney (Australia - AEST)</option>
+                    <option value="Pacific/Auckland">Auckland (New Zealand - NZST)</option>
+                </optgroup>
+            </select>
+            <div class="converted-result" id="convertedResult">Select a city to compare with Norway</div>
+        </div>
+    </div>
+
+    <!-- SEO FAQ -->
+    <section class="seo-faq" aria-labelledby="faq-title">
+        <h2 class="section-title" id="faq-title">❓ Norway Time & Travel FAQs</h2>
+        <div class="grid-container">
+            <div class="tourist-card">
+                <div class="tourist-name">What time zone is Norway in?</div>
+                <div class="tourist-description">Norway uses Central European Time (CET) in winter and Central European Summer Time (CEST) during daylight saving time.</div>
+            </div>
+            <div class="tourist-card">
+                <div class="tourist-name">What are famous places to visit in Norway?</div>
+                <div class="tourist-description">Popular destinations include Geirangerfjord, Preikestolen, Trolltunga, Lofoten Islands, Tromsø, Bergen, Flåm and Oslo attractions.</div>
+            </div>
+            <div class="tourist-card">
+                <div class="tourist-name">What is Norway known for?</div>
+                <div class="tourist-description">Norway is widely known for its fjords, Arctic landscapes, scenic mountains, historic cities and northern lights experiences.</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>World Time Clock - Norsk Tid Oslo</strong></p>
+        <p>Karl Johans gate 25, 0159 Oslo, Norway</p>
+        <p>Live Norway time, Oslo time, international timezone conversion and travel information for famous places to visit in Norway.</p>
+        <p>&copy; 2026 Norway World Time Clock. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function updateClocks() {
+            const now = new Date();
+
+            // Main Norway Time
+            const norwayOptions = { timeZone: 'Europe/Oslo', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const norwayDateOpts = { timeZone: 'Europe/Oslo', weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+            const timeStr = new Intl.DateTimeFormat('no-NO', norwayOptions).format(now);
+            const dateStr = new Intl.DateTimeFormat('no-NO', norwayDateOpts).format(now);
+
+            document.getElementById('norwayClock').innerText = timeStr;
+            document.getElementById('norwayDate').innerText = dateStr;
+
+            // Norwegian City Clocks
+            document.getElementById('osloTime').innerText = timeStr;
+            document.getElementById('bergenTime').innerText = timeStr;
+            document.getElementById('trondheimTime').innerText = timeStr;
+            document.getElementById('stavangerTime').innerText = timeStr;
+            document.getElementById('drammenTime').innerText = timeStr;
+            document.getElementById('tromsoTime').innerText = timeStr;
+
+            convertTime();
+        }
+
+        function convertTime() {
+            const selectElem = document.getElementById('targetZone');
+            const targetZone = selectElem.value;
+            const cityName = selectElem.options[selectElem.selectedIndex].text;
+            const now = new Date();
+            
+            const targetOptions = { timeZone: targetZone, hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+            const convertedTime = new Intl.DateTimeFormat('en-US', targetOptions).format(now);
+            
+            document.getElementById('convertedResult').innerHTML = `⏱️ <strong>${cityName}:</strong> ${convertedTime}`;
+        }
+
+        setInterval(updateClocks, 1000);
+        updateClocks();
+    </script>
+</body>
+</html>
